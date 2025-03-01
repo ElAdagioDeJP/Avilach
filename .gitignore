@@ -1,1 +1,5 @@
-/env
+/backend/env
+/backend/backend/__pycache__
+/backend/avilach/migrations
+/backend/avilach/__pycache__
+/backend/avilach/__init__.py

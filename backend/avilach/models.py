@@ -3,7 +3,7 @@ from django.db import models
 class Usuario(models.Model):
     nombre_user = models.CharField(max_length=255)
     nombre = models.CharField(max_length=255)
-    roll = models.CharField(max_length=255)  # roll_text corregido
+    rol = models.CharField(max_length=255)  # roll_text corregido
     telefono = models.CharField(max_length=20)
     imagen = models.TextField()  # O usar ImageField si subirás archivos
 

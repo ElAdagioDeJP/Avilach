@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Formulario Inmobiliario - Avilach</title>
+  <!-- Se carga la hoja de estilos principal -->
+  <link rel="stylesheet" href="footer.css">
+  <link rel="stylesheet" href="navbar.css">
+  <link rel="stylesheet" href="nuevoInmueble.css">
+  <link rel="shortcut icon" href="img/ico.png" type="image/x-icon">
+  <!-- Íconos de Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <!-- Fuentes elegantes: Poppins para textos y Cinzel para encabezados -->
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- SIDEBAR -->
+    <nav class="top-nav">
+        <button class="menu-toggle" onclick="toggleSidebar()">
+            <i class="fa-solid fa-bars"></i>
+        </button>
+        <img src="img/header.png" alt="Logo" class="logo">
+        <div class="user-profile">
+            <img src="img/user.jpeg" alt="Usuario" class="user-avatar">
+            <span>Isabela Dominguez</span>
+        </div>
+    </nav>
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+        <div class="sidebar-header">
+            <button class="sidebar-close" onclick="toggleSidebar()">&times;</button>
+            <h2>Avilach</h2>
+            <p class="text-muted">Grupo inmobiliario</p>
+        </div>
+        
+        <div class="sidebar-links">
+            <div class="dropdown-container">
+                <div class="dropdown-link sidebar-link" onclick="toggleDropdown(this)">
+                    <div>
+                        <i class="fa-solid fa-building"></i>
+                        Inmuebles
+                    </div>
+                    <i class="fa-solid fa-chevron-down"></i>
+            </div>
+            <div class="dropdown-menu">
+                <a href="/reportes/ventas" class="sidebar-link">Lista de Inmueble</a>
+                <a href="nuevoInmueble.html" class="sidebar-link">Nuevo Inmueble</a>
+                <a href="/reportes/usuarios" class="sidebar-link">Inmuebles de mis Aliados</a>
+            </div>
+            
+            <div class="dropdown-container">
+                <div class="dropdown-link sidebar-link" onclick="toggleDropdown(this)">
+                    <div>
+                        <i class="fa-solid fa-users"></i>
+                        Clientes
+                    </div>
+                    <i class="fa-solid fa-chevron-down"></i>
+            </div>
+            <div class="dropdown-menu">
+                <a href="/reportes/ventas" class="sidebar-link">Directorio de Clientes</a>
+                <a href="nuevoCliente.html" class="sidebar-link">Nuevo Cliente</a>
+                <a href="/reportes/usuarios" class="sidebar-link">Embudo de Negocios</a>
+                <a href="/reportes/usuarios" class="sidebar-link">Gestiones Realizadas</a>
+                <a href="/reportes/usuarios" class="sidebar-link">Lista de Clientes</a>
+                <a href="/reportes/usuarios" class="sidebar-link">Importar - Exportar</a>
+            </div>
+            <div class="dropdown-container">
+                <div class="dropdown-link sidebar-link" onclick="toggleDropdown(this)">
+                    <div>
+                        <i class="fa-solid fa-chart-column"></i>
+                        Reportes
+                    </div>
+                    <i class="fa-solid fa-chevron-down"></i>
+            </div>
+            <div class="dropdown-menu">
+                <a href="/reportes/ventas" class="sidebar-link">General</a>
+                <a href="/reportes/usuarios" class="sidebar-link">Negocios Realizados</a>
+                <a href="/reportes/usuarios" class="sidebar-link">Usuarios</a>
+                <a href="/reportes/usuarios" class="sidebar-link">Propietarios</a>
+                <a href="/reportes/usuarios" class="sidebar-link">Pagina Web</a>
+                <a href="/reportes/usuarios" class="sidebar-link">Correos Enviados</a>
+            </div>
+        </div>
+
+        <a href="/" class="sidebar-link sidebar-logout text-danger">
+            <i class="fa fa-sign-out"></i>
+            Cerrar Sesión
+        </a>
+    </aside>
+
+    <!-- Backdrop -->
+    <div class="backdrop" onclick="toggleSidebar()"></div>
+
+
+    <script>
+        function toggleDropdown(element) {
+            const container = element.closest('.dropdown-container');
+            const menu = container.querySelector('.dropdown-menu');
+            
+            // Cerrar otros dropdowns
+            document.querySelectorAll('.dropdown-container').forEach(otherContainer => {
+                if(otherContainer !== container) {
+                    otherContainer.classList.remove('active');
+                    otherContainer.querySelector('.dropdown-menu').style.maxHeight = null;
+                }
+            });
+
+            // Toggle actual
+            container.classList.toggle('active');
+            menu.style.maxHeight = menu.style.maxHeight ? null : menu.scrollHeight + "px";
+        }
+
+        // Cerrar dropdowns al hacer click fuera
+        document.addEventListener('click', (e) => {
+            if(!e.target.closest('.dropdown-container')) {
+                document.querySelectorAll('.dropdown-container').forEach(container => {
+                    container.classList.remove('active');
+                    container.querySelector('.dropdown-menu').style.maxHeight = null;
+                });
+            }
+        });
+        function toggleSidebar() {
+            const html = document.documentElement;
+            const sidebar = document.querySelector('.sidebar');
+            const backdrop = document.querySelector('.backdrop');
+            
+            sidebar.classList.toggle('active');
+            backdrop.classList.toggle('active');
+            html.classList.toggle('sidebar-open'); // Cambiamos a html en lugar de body
+        }
+    </script>
+    <!-- FIN DEL SIDEBAR -->
+
+  <!-- Contenido principal -->
+  <main>
+    <!-- Sección del formulario -->
+    <section class="form-section">
+      <form id="propertyForm" class="luxury-form">
+        <!-- Indicador de progreso del formulario -->
+        <div class="progress-steps">
+          <div class="step active">1. Básico</div>
+          <div class="step">2. Características</div>
+          <div class="step">3. Ubicación</div>
+          <div class="step">4. Multimedia</div>
+          <div class="step">5. Propietario</div>
+        </div>
+
+        <!-- Bloque de Información Básica -->
+        <fieldset class="form-block active" data-step="1">
+          <legend><i class="fas fa-info-circle"></i> Información Básica</legend>
+          
+          <!-- Campo Título -->
+          <div class="field-group">
+            <label for="titulo"><i class="fas fa-heading"></i> Título</label>
+            <input type="text" id="titulo" required>
+            <span class="error-message"></span>
+          </div>
+
+          <!-- Campos Tipo y Negocio -->
+          <div class="field-row">
+            <div class="field-group">
+              <label for="tipo"><i class="fas fa-home"></i> Tipo</label>
+              <select id="tipo" required>
+                <option value="">Seleccione...</option>
+                <option value="casa">Casa</option>
+                <option value="apartamento">Apartamento</option>
+                <option value="local">Local Comercial</option>
+              </select>
+            </div>
+            <div class="field-group">
+              <label for="negocio"><i class="fas fa-handshake"></i> Negocio</label>
+              <select id="negocio" required>
+                <option value="">Venta/Alquiler</option>
+                <option value="venta">Venta</option>
+                <option value="alquiler">Alquiler</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- Campos de Precios condicionales -->
+          <div class="field-row price-fields">
+            <div class="field-group conditional-field" data-condition="venta">
+              <label for="precio_venta"><i class="fas fa-tag"></i> Precio Venta</label>
+              <input type="number" id="precio_venta" step="1000">
+              <span class="error-message"></span>
+            </div>
+            <div class="field-group conditional-field" data-condition="alquiler">
+              <label for="precio_alquiler"><i class="fas fa-calendar-alt"></i> Alquiler</label>
+              <div class="inline-fields">
+                <input type="number" id="precio_alquiler" step="100" placeholder="Monto">
+                <select id="tiempo_alquiler">
+                  <option value="mensual">Mensual</option>
+                  <option value="trimestral">Trimestral</option>
+                  <option value="anual">Anual</option>
+                </select>
+              </div>
+              <span class="error-message"></span>
+            </div>
+          </div>
+        </fieldset>
+
+        <!-- Navegación del formulario -->
+        <div class="form-nav">
+          <button type="button" class="btn prev-btn" disabled>
+            <i class="fas fa-chevron-left"></i> Anterior
+          </button>
+          <button type="button" class="btn next-btn">
+            Siguiente <i class="fas fa-chevron-right"></i>
+          </button>
+          <button type="submit" class="btn submit-btn">
+            Enviar <i class="fas fa-paper-plane"></i>
+          </button>
+        </div>
+      </form>
+    </section>
+  </main>
+
+  <!-- Pie de página elegante -->
+  <footer>
+    <div class="footer-content">
+      <section class="footer-links" aria-labelledby="enlaces-utiles">
+        <h3 id="enlaces-utiles">Enlaces Útiles</h3>
+        <nav>
+          <ul>
+            <li><a href="#">Políticas de Privacidad</a></li>
+            <li><a href="#">Términos de Servicio</a></li>
+            <li><a href="#">Contacto</a></li>
+          </ul>
+        </nav>
+      </section>
+      <section class="footer-social" aria-labelledby="redes-sociales">
+        <h3 id="redes-sociales">Síguenos</h3>
+        <div class="social-links">
+          <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+          <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+        </div>
+      </section>
+      <section class="footer-newsletter" aria-labelledby="newsletter">
+        <h3 id="newsletter">Newsletter</h3>
+        <form class="newsletter-form">
+          <input type="email" placeholder="Tu correo electrónico" aria-label="Suscribirse al newsletter">
+          <button type="submit" class="btn-newsletter">Suscribirse</button>
+        </form>
+      </section>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2024 Inmobiliaria. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+
+  <!-- Scripts para el menú lateral y dropdowns -->
+  <script>
+    function toggleSidebar() {
+      const sidebar = document.querySelector('.sidebar');
+      const backdrop = document.querySelector('.backdrop');
+      sidebar.classList.toggle('active');
+      backdrop.classList.toggle('active');
+    }
+    
+    // Funcionalidad de dropdown en la barra lateral
+    document.querySelectorAll('.dropdown-toggle').forEach(item => {
+      item.addEventListener('click', function(e) {
+        e.preventDefault();
+        const dropdown = this.nextElementSibling;
+        dropdown.classList.toggle('active');
+      });
+    });
+  </script>
+</body>
+</html>

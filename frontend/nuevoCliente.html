@@ -5,11 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Avilach Clientes</title>
     <link rel="stylesheet" href="nuevoCliente.css">
+    <link rel="stylesheet" href="navbar.css">
     <link rel="stylesheet" href="footer.css">
-    <link rel="stylesheet" href="nuevoInmueble.css">
     <link rel="shortcut icon" href="img/ico.png" type="image/x-icon">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link rel="stylesheet" href="navbar.css">
 </head>
 <body>
     <!-- SIDEBAR -->
@@ -42,9 +41,9 @@
                     <i class="fa-solid fa-chevron-down"></i>
             </div>
             <div class="dropdown-menu">
-                <a href="/reportes/ventas" class="sidebar-link">Lista de Inmueble</a>
+                <a href="index.html" class="sidebar-link">Lista de Inmueble</a>
                 <a href="nuevoInmueble.html" class="sidebar-link">Nuevo Inmueble</a>
-                <a href="/reportes/usuarios" class="sidebar-link">Inmuebles de mis Aliados</a>
+                <a href="inmueblesAliados.html" class="sidebar-link">Inmuebles de mis Aliados</a>
             </div>
             
             <div class="dropdown-container">
@@ -56,9 +55,9 @@
                     <i class="fa-solid fa-chevron-down"></i>
             </div>
             <div class="dropdown-menu">
-                <a href="/reportes/ventas" class="sidebar-link">Directorio de Clientes</a>
+                <a href="directorioClientes.html" class="sidebar-link">Directorio de Clientes</a>
                 <a href="nuevoCliente.html" class="sidebar-link">Nuevo Cliente</a>
-                <a href="/reportes/usuarios" class="sidebar-link">Embudo de Negocios</a>
+                <a href="embudoNegocios.html" class="sidebar-link">Embudo de Negocios</a>
                 <a href="/reportes/usuarios" class="sidebar-link">Gestiones Realizadas</a>
                 <a href="/reportes/usuarios" class="sidebar-link">Lista de Clientes</a>
                 <a href="/reportes/usuarios" class="sidebar-link">Importar - Exportar</a>
@@ -76,7 +75,6 @@
                 <a href="/reportes/usuarios" class="sidebar-link">Negocios Realizados</a>
                 <a href="/reportes/usuarios" class="sidebar-link">Usuarios</a>
                 <a href="/reportes/usuarios" class="sidebar-link">Propietarios</a>
-                <a href="/reportes/usuarios" class="sidebar-link">Pagina Web</a>
                 <a href="/reportes/usuarios" class="sidebar-link">Correos Enviados</a>
             </div>
         </div>
@@ -131,7 +129,6 @@
     <!-- FIN DEL SIDEBAR -->
     <!-- Reemplaza el main-content existente -->
 <main class="main-content">
-    <h1 class="page-title">Nuevo Cliente</h1>
     
     <form id="clienteForm" class="client-form" onsubmit="handleSubmit(event)">
         <!-- Sección de información básica -->

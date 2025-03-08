@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <!-- Meta tags mejorados para SEO -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Inmuebles de mis aliados. Descubre las propiedades de nuestros aliados estratégicos en Avilach.">
+    <meta name="keywords" content="aliados, inmuebles, propiedades, bienes raíces">
+    <meta property="og:title" content="Avilach - Inmuebles de Mis Aliados">
+    <meta property="og:type" content="website">
+    <title>Avilach - Inmuebles de Mis Aliados</title>
+    <!-- Se reutilizan los mismos archivos de estilos para mantener la coherencia visual -->
+    <link rel="stylesheet" href="inmueblesAliados.css">
+    <link rel="stylesheet" href="navbar.css">
+    <link rel="stylesheet" href="footer.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Poppins&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/your-kit-code.js" crossorigin="anonymous"></script>
+    <link rel="shortcut icon" href="img/ico.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="top-nav">
+        <button class="menu-toggle" onclick="toggleSidebar()">
+            <i class="fa-solid fa-bars"></i>
+        </button>
+        <img src="img/header.png" alt="Logo" class="logo">
+        <div class="user-profile">
+            <img src="img/user.jpeg" alt="Usuario" class="user-avatar">
+            <span>Isabela Dominguez</span>
+        </div>
+    </nav>
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+        <div class="sidebar-header">
+            <button class="sidebar-close" onclick="toggleSidebar()">&times;</button>
+            <h2>Avilach</h2>
+            <p class="text-muted">Grupo inmobiliario</p>
+        </div>
+        <div class="sidebar-links">
+            <!-- Dropdown para Inmuebles -->
+            <div class="dropdown-container">
+                <div class="dropdown-link sidebar-link" onclick="toggleDropdown(this)">
+                    <div>
+                        <i class="fa-solid fa-building"></i>
+                        Inmuebles
+                    </div>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </div>
+                <div class="dropdown-menu">
+                    <a href="index.html" class="sidebar-link">Lista de Inmueble</a>
+                    <a href="nuevoInmueble.html" class="sidebar-link">Nuevo Inmueble</a>
+                    <!-- Se marca el enlace activo para "Inmuebles de mis Aliados" -->
+                    <a href="inmueblesAliados.html" class="sidebar-link active">Inmuebles de mis Aliados</a>
+                </div>
+            </div>
+            <!-- Dropdown para Clientes -->
+            <div class="dropdown-container">
+                <div class="dropdown-link sidebar-link" onclick="toggleDropdown(this)">
+                    <div>
+                        <i class="fa-solid fa-users"></i>
+                        Clientes
+                    </div>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </div>
+                <div class="dropdown-menu">
+                    <a href="directorioClientes.html" class="sidebar-link">Directorio de Clientes</a>
+                    <a href="nuevoCliente.html" class="sidebar-link">Nuevo Cliente</a>
+                    <a href="embudoNegocios.html" class="sidebar-link">Embudo de Negocios</a>
+                    <a href="/reportes/usuarios" class="sidebar-link">Gestiones Realizadas</a>
+                    <a href="/reportes/usuarios" class="sidebar-link">Lista de Clientes</a>
+                    <a href="/reportes/usuarios" class="sidebar-link">Importar - Exportar</a>
+                </div>
+            </div>
+            <!-- Dropdown para Reportes -->
+            <div class="dropdown-container">
+                <div class="dropdown-link sidebar-link" onclick="toggleDropdown(this)">
+                    <div>
+                        <i class="fa-solid fa-chart-column"></i>
+                        Reportes
+                    </div>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </div>
+                <div class="dropdown-menu">
+                    <a href="/reportes/ventas" class="sidebar-link">General</a>
+                    <a href="/reportes/usuarios" class="sidebar-link">Negocios Realizados</a>
+                    <a href="/reportes/usuarios" class="sidebar-link">Usuarios</a>
+                    <a href="/reportes/usuarios" class="sidebar-link">Propietarios</a>
+                    <a href="/reportes/usuarios" class="sidebar-link">Correos Enviados</a>
+                </div>
+            </div>
+        </div>
+        <a href="/" class="sidebar-link sidebar-logout text-danger">
+            <i class="fa fa-sign-out"></i>
+            Cerrar Sesión
+        </a>
+    </aside>
+
+    <!-- Backdrop para la Sidebar -->
+    <div class="backdrop" onclick="toggleSidebar()"></div>
+
+    <!-- Contenido principal: Vista de Inmuebles de Mis Aliados -->
+    <main class="main-content">
+        <section aria-labelledby="aliados-heading" class="properties-section">
+            <!-- Título de la sección adaptado -->
+            <h2 id="aliados-heading" class="page-title">Inmuebles de mis Aliados</h2>
+            <!-- Contenedor para las tarjetas de propiedades -->
+            <div class="properties-grid" id="allied-properties-container">
+                <!-- Las propiedades de aliados se cargarán dinámicamente vía JavaScript -->
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-grid">
+            <section class="footer-section" aria-labelledby="enlaces-utiles">
+                <h3 id="enlaces-utiles">Enlaces Útiles</h3>
+                <nav aria-label="Enlaces legales">
+                    <a href="#">Políticas de Privacidad</a>
+                    <a href="#">Términos de Servicio</a>
+                    <a href="#">Contacto</a>
+                </nav>
+            </section>
+            <section class="footer-section" aria-labelledby="redes-sociales">
+                <h3 id="redes-sociales">Síguenos</h3>
+                <div class="social-links">
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </section>
+            <section class="footer-section" aria-labelledby="newsletter">
+                <h3 id="newsletter">Newsletter</h3>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="Tu correo electrónico" aria-label="Suscribirse al newsletter">
+                    <button type="submit" class="btn-newsletter">Suscribirse</button>
+                </form>
+            </section>
+        </div>
+        <div class="footer-copyright">
+            <p>© 2024 Inmobiliaria. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- Scripts de funcionalidad para Sidebar y Dropdown -->
+    <script>
+        function toggleDropdown(element) {
+            const container = element.closest('.dropdown-container');
+            const menu = container.querySelector('.dropdown-menu');
+            
+            // Cerrar otros dropdowns
+            document.querySelectorAll('.dropdown-container').forEach(otherContainer => {
+                if(otherContainer !== container) {
+                    otherContainer.classList.remove('active');
+                    otherContainer.querySelector('.dropdown-menu').style.maxHeight = null;
+                }
+            });
+
+            // Toggle del dropdown actual
+            container.classList.toggle('active');
+            menu.style.maxHeight = menu.style.maxHeight ? null : menu.scrollHeight + "px";
+        }
+
+        // Cerrar dropdowns al hacer clic fuera
+        document.addEventListener('click', (e) => {
+            if(!e.target.closest('.dropdown-container')) {
+                document.querySelectorAll('.dropdown-container').forEach(container => {
+                    container.classList.remove('active');
+                    container.querySelector('.dropdown-menu').style.maxHeight = null;
+                });
+            }
+        });
+
+        function toggleSidebar() {
+            const html = document.documentElement;
+            const sidebar = document.querySelector('.sidebar');
+            const backdrop = document.querySelector('.backdrop');
+            
+            sidebar.classList.toggle('active');
+            backdrop.classList.toggle('active');
+            html.classList.toggle('sidebar-open');
+        }
+    </script>
+
+    <!-- Script para cargar dinámicamente los inmuebles de aliados -->
+    <script>
+        // Datos simulados para las propiedades de aliados, incluyendo comisión y nombre del aliado
+        const mockAlliedProperties = [
+            {
+                id: 1,
+                title: "Casa Colonial de Aliado A",
+                location: "Centro Histórico",
+                type: "Casa",
+                bedrooms: 4,
+                bathrooms: 3,
+                area: 300,
+                price: 950000,
+                status: "Disponible",
+                commission: 3, // % de comisión
+                allyName: "Aliado A",
+                image: "https://source.unsplash.com/random/800x600?house"
+            },
+            {
+                id: 2,
+                title: "Departamento Moderno de Aliado B",
+                location: "Barrio Financiero",
+                type: "Departamento",
+                bedrooms: 3,
+                bathrooms: 2,
+                area: 200,
+                price: 1100000,
+                status: "Reservado",
+                commission: 4, // % de comisión
+                allyName: "Aliado B",
+                image: "https://source.unsplash.com/random/800x600?apartment"
+            },
+            {
+                id: 3,
+                title: "Penthouse de Lujo de Aliado C",
+                location: "Zona Exclusiva",
+                type: "Penthouse",
+                bedrooms: 5,
+                bathrooms: 4,
+                area: 500,
+                price: 2700000,
+                status: "Disponible",
+                commission: 5, // % de comisión
+                allyName: "Aliado C",
+                image: "https://source.unsplash.com/random/800x600?penthouse"
+            }
+        ];
+
+        // Función para renderizar las tarjetas de propiedades de aliados
+        function renderAlliedProperties(properties) {
+            const container = document.getElementById('allied-properties-container');
+            container.innerHTML = properties.map(property => `
+                <article class="property-card" aria-label="Propiedad: ${property.title}">
+                    <div class="property-image" 
+                         role="img" 
+                         aria-label="${property.type} en ${property.location}"
+                         style="background-image: url('${property.image}')"></div>
+                    <div class="property-info">
+                        <h3>${property.title}</h3>
+                        <p class="property-location">
+                            <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
+                            ${property.location}
+                        </p>
+                        <div class="property-details" role="contentinfo">
+                            <span><i class="fas fa-bed" aria-hidden="true"></i> ${property.bedrooms}</span>
+                            <span><i class="fas fa-bath" aria-hidden="true"></i> ${property.bathrooms}</span>
+                            <span><i class="fas fa-ruler-combined" aria-hidden="true"></i> ${property.area}m²</span>
+                            <span><i class="fas fa-dollar-sign" aria-hidden="true"></i> ${property.price.toLocaleString()}</span>
+                        </div>
+                        <!-- Sección adicional para mostrar el % de comisión y el nombre del aliado -->
+                        <p class="property-commission"><i class="fas fa-percentage"></i> Comisión: ${property.commission}%</p>
+                        <p class="property-ally"><i class="fas fa-handshake"></i> Aliado: ${property.allyName}</p>
+                        <div class="property-status ${property.status.toLowerCase()}">${property.status}</div>
+                    </div>
+                </article>
+            `).join('');
+        }
+
+        // Cargar los datos simulados al iniciar la página
+        window.addEventListener('load', () => {
+            renderAlliedProperties(mockAlliedProperties);
+        });
+
+        // Estilos adicionales dinámicos específicos para el estado de las propiedades
+        const style = document.createElement('style');
+        style.textContent = `
+            .property-status.reservado { background: #4A6A8A; color: white; }
+            .property-status.vendido { background: #3C3C39; color: white; }
+            .property-details span { display: flex; align-items: center; gap: 0.3rem; }
+            .fa-dollar-sign { font-size: 0.9em; }
+            /* Opcionales: ajustes para los nuevos elementos */
+            .property-commission, .property-ally {
+                font-size: 0.9rem;
+                color: #64645E;
+                margin-top: 0.5rem;
+            }
+            .property-commission i, .property-ally i {
+                margin-right: 0.3rem;
+            }
+        `;
+        document.head.appendChild(style);
+    </script>
+</body>
+</html>

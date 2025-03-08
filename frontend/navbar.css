@@ -52,6 +52,9 @@
             padding: 1.5rem;
             border-bottom: 1px solid #ddd;
         }
+        .sidebar-header h2, p{
+            color: #EEC346;
+        }
 
         .sidebar-close {
             position: absolute;
@@ -154,3 +157,19 @@
 html.sidebar-open {
   overflow: hidden;
 }
+.logo-container img {
+    max-height: 50px;
+  }
+  .user-profile {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #bbb;
+  }
+  .user-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #EEC346;
+  }

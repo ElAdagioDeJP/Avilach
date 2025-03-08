@@ -38,6 +38,7 @@ class Inmueble(models.Model):
     telefono_propietario = models.CharField(max_length=20)
     comision = models.FloatField(null=True, blank=True)
     comision_externa = models.FloatField(null=True, blank=True)
+    nombre_aliado = models.CharField(max_length=255)
 
 class Cliente(models.Model):
     usuario = models.ForeignKey(Usuario, on_delete=models.CASCADE)

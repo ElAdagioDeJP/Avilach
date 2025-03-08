@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <!-- Meta tags mejorados para SEO -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Inmobiliaria líder con propiedades exclusivas. Encuentra tu hogar ideal en nuestra amplia selección de bienes raíces.">
+    <meta name="keywords" content="inmuebles, casas, apartamentos, propiedades, bienes raíces">
+    <meta property="og:title" content="Avilach - Propiedades Premium">
+    <meta property="og:type" content="website">
+    <title>Avilach Embudo</title>
+    <link rel="stylesheet" href="embudoNegocios.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Poppins&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/your-kit-code.js" crossorigin="anonymous"></script>
+    <link rel="shortcut icon" href="img/ico.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="navbar.css">
+    <link rel="stylesheet" href="footer.css">
+</head>
+<body>
+    <nav class="top-nav">
+        <button class="menu-toggle" onclick="toggleSidebar()">
+            <i class="fa-solid fa-bars"></i>
+        </button>
+        <img src="img/header.png" alt="Logo" class="logo">
+        <div class="user-profile">
+            <img src="img/user.jpeg" alt="Usuario" class="user-avatar">
+            <span>Isabela Dominguez</span>
+        </div>
+    </nav>
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+        <div class="sidebar-header">
+            <button class="sidebar-close" onclick="toggleSidebar()">&times;</button>
+            <h2>Avilach</h2>
+            <p class="text-muted">Grupo inmobiliario</p>
+        </div>
+        
+        <div class="sidebar-links">
+            <div class="dropdown-container">
+                <div class="dropdown-link sidebar-link" onclick="toggleDropdown(this)">
+                    <div>
+                        <i class="fa-solid fa-building"></i>
+                        Inmuebles
+                    </div>
+                    <i class="fa-solid fa-chevron-down"></i>
+            </div>
+            <div class="dropdown-menu">
+                <a href="index.html" class="sidebar-link">Lista de Inmueble</a>
+                <a href="nuevoInmueble.html" class="sidebar-link">Nuevo Inmueble</a>
+                <a href="inmueblesAliados.html" class="sidebar-link">Inmuebles de mis Aliados</a>
+            </div>
+            
+            <div class="dropdown-container">
+                <div class="dropdown-link sidebar-link" onclick="toggleDropdown(this)">
+                    <div>
+                        <i class="fa-solid fa-users"></i>
+                        Clientes
+                    </div>
+                    <i class="fa-solid fa-chevron-down"></i>
+            </div>
+            <div class="dropdown-menu">
+                <a href="directorioClientes.html" class="sidebar-link">Directorio de Clientes</a>
+                <a href="nuevoCliente.html" class="sidebar-link">Nuevo Cliente</a>
+                <a href="embudoNegocios.html" class="sidebar-link">Embudo de Negocios</a>
+                <a href="/reportes/usuarios" class="sidebar-link">Gestiones Realizadas</a>
+                <a href="/reportes/usuarios" class="sidebar-link">Lista de Clientes</a>
+                <a href="/reportes/usuarios" class="sidebar-link">Importar - Exportar</a>
+            </div>
+            <div class="dropdown-container">
+                <div class="dropdown-link sidebar-link" onclick="toggleDropdown(this)">
+                    <div>
+                        <i class="fa-solid fa-chart-column"></i>
+                        Reportes
+                    </div>
+                    <i class="fa-solid fa-chevron-down"></i>
+            </div>
+            <div class="dropdown-menu">
+                <a href="/reportes/ventas" class="sidebar-link">General</a>
+                <a href="/reportes/usuarios" class="sidebar-link">Negocios Realizados</a>
+                <a href="/reportes/usuarios" class="sidebar-link">Usuarios</a>
+                <a href="/reportes/usuarios" class="sidebar-link">Propietarios</a>
+                <a href="/reportes/usuarios" class="sidebar-link">Correos Enviados</a>
+            </div>
+        </div>
+
+        <a href="/" class="sidebar-link sidebar-logout text-danger">
+            <i class="fa fa-sign-out"></i>
+            Cerrar Sesión
+        </a>
+    </aside>
+    
+        <div class="container-fluid">
+            <!-- Encabezado modificado -->
+            <div class="page-header">
+                <div class="header-content">
+                    <h1 class="gold-title"><i class="fas fa-filter"></i> Embudo de negocios</h1>
+                    <div class="header-actions">
+                        <button class="gold-btn">
+                            <i class="fas fa-plus"></i> Nuevo
+                        </button>
+                        <button class="gold-btn">
+                            <i class="fas fa-cog"></i> Configuración
+                        </button>
+                    </div>
+                </div>
+            </div>
+    
+            <!-- Migas de pan estilizadas -->
+            <div class="breadcrumbs">
+                <ul>
+                    <li><a href="https://wasi.co/desktop">Escritorio</a></li>
+                    <li><i class="fas fa-chevron-right"></i></li>
+                    <li><a href="https://wasi.co/usuario/clientes">Clientes</a></li>
+                    <li><i class="fas fa-chevron-right"></i></li>
+                    <li class="active">Embudo de negocios</li>
+                </ul>
+            </div>
+    
+            <!-- Contenido principal actualizado -->
+            <div class="kanban-container">
+                <!-- Filtros -->
+                <div class="filtro-pipeline">
+                    <div class="filter-group">
+                        <i class="fas fa-search gold-icon"></i>
+                        <input type="text" placeholder="Buscar cliente..." class="gold-input">
+                    </div>
+                    <div class="filter-group">
+                        <i class="fas fa-filter gold-icon"></i>
+                        <select class="gold-select">
+                            <option>Todos los estados</option>
+                            <option>Nuevo</option>
+                            <option>En negociación</option>
+                        </select>
+                    </div>
+                </div>
+    
+                <!-- Area Kanban -->
+                <div class="kanban-grid">
+                    <!-- Columna Nuevo -->
+                    <div class="kanban-column">
+                        <div class="column-header">
+                            <h3>Nuevo <span class="status-badge">17</span></h3>
+                            <i class="fas fa-plus-circle gold-icon"></i>
+                        </div>
+                        <div class="client-card">
+                            <div class="client-header">
+                                <h4>María González</h4>
+                                <span class="client-status new">Nuevo</span>
+                            </div>
+                            <p class="client-info"><i class="fas fa-home gold-icon"></i> Busca apartamento en Bogotá</p>
+                            <div class="client-meta">
+                                <span><i class="fas fa-clock gold-icon"></i> Hace 2h</span>
+                                <button class="card-action"><i class="fas fa-ellipsis-v"></i></button>
+                            </div>
+                        </div>
+                        <!-- Más clientes... -->
+                    </div>
+    
+                    <!-- Columna En negociación -->
+                    <div class="kanban-column">
+                        <div class="column-header">
+                            <h3>En negociación <span class="status-badge">8</span></h3>
+                            <i class="fas fa-handshake gold-icon"></i>
+                        </div>
+                        <div class="client-card">
+                            <div class="client-header">
+                                <h4>Carlos Mendoza</h4>
+                                <span class="client-status negotiation">En proceso</span>
+                            </div>
+                            <p class="client-info"><i class="fas fa-home gold-icon"></i> Casa campestre en Medellín</p>
+                            <div class="client-meta">
+                                <span><i class="fas fa-clock gold-icon"></i> Hace 5d</span>
+                                <button class="card-action"><i class="fas fa-ellipsis-v"></i></button>
+                            </div>
+                        </div>
+                        <!-- Más clientes... -->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <footer class="footer">
+            <div class="footer-grid">
+                <section class="footer-section" aria-labelledby="enlaces-utiles">
+                    <h3 id="enlaces-utiles">Enlaces Útiles</h3>
+                    <nav aria-label="Enlaces legales">
+                        <a href="#">Políticas de Privacidad</a>
+                        <a href="#">Términos de Servicio</a>
+                        <a href="#">Contacto</a>
+                    </nav>
+                </section>
+                <section class="footer-section" aria-labelledby="redes-sociales">
+                    <h3 id="redes-sociales">Síguenos</h3>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </section>
+                <section class="footer-section" aria-labelledby="newsletter">
+                    <h3 id="newsletter">Newsletter</h3>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Tu correo electrónico" aria-label="Suscribirse al newsletter">
+                        <button type="submit" class="btn-newsletter">Suscribirse</button>
+                    </form>
+                </section>
+            </div>
+            <div class="footer-copyright">
+                <p>© 2024 Inmobiliaria. Todos los derechos reservados.</p>
+            </div>
+        </footer>
+    <!-- Scripts -->
+    <script>
+        function toggleDropdown(element) {
+            const container = element.closest('.dropdown-container');
+            const menu = container.querySelector('.dropdown-menu');
+            
+            // Cerrar otros dropdowns
+            document.querySelectorAll('.dropdown-container').forEach(otherContainer => {
+                if(otherContainer !== container) {
+                    otherContainer.classList.remove('active');
+                    otherContainer.querySelector('.dropdown-menu').style.maxHeight = null;
+                }
+            });
+
+            // Toggle actual
+            container.classList.toggle('active');
+            menu.style.maxHeight = menu.style.maxHeight ? null : menu.scrollHeight + "px";
+        }
+
+        // Cerrar dropdowns al hacer click fuera
+        document.addEventListener('click', (e) => {
+            if(!e.target.closest('.dropdown-container')) {
+                document.querySelectorAll('.dropdown-container').forEach(container => {
+                    container.classList.remove('active');
+                    container.querySelector('.dropdown-menu').style.maxHeight = null;
+                });
+            }
+        });
+        function toggleSidebar() {
+            const html = document.documentElement;
+            const sidebar = document.querySelector('.sidebar');
+            const backdrop = document.querySelector('.backdrop');
+            
+            sidebar.classList.toggle('active');
+            backdrop.classList.toggle('active');
+            html.classList.toggle('sidebar-open'); // Cambiamos a html en lugar de body
+        }
+    </script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Avilach Clientes</title>
+    <link rel="stylesheet" href="directorioClientes.css">
+    <link rel="stylesheet" href="navbar.css">
+    <link rel="stylesheet" href="footer.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Poppins&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/your-kit-code.js" crossorigin="anonymous"></script>
+    <link rel="shortcut icon" href="img/ico.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+
+<body>
+    <nav class="top-nav">
+        <button class="menu-toggle" onclick="toggleSidebar()">
+            <i class="fa-solid fa-bars"></i>
+        </button>
+        <img src="img/header.png" alt="Logo" class="logo">
+        <div class="user-profile">
+            <img src="img/user.jpeg" alt="Usuario" class="user-avatar">
+            <span>Isabela Dominguez</span>
+        </div>
+    </nav>
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+        <div class="sidebar-header">
+            <button class="sidebar-close" onclick="toggleSidebar()">&times;</button>
+            <h2>Avilach</h2>
+            <p class="text-muted">Grupo inmobiliario</p>
+        </div>
+
+        <div class="sidebar-links">
+            <div class="dropdown-container">
+                <div class="dropdown-link sidebar-link" onclick="toggleDropdown(this)">
+                    <div>
+                        <i class="fa-solid fa-building"></i>
+                        Inmuebles
+                    </div>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </div>
+                <div class="dropdown-menu">
+                    <a href="index.html" class="sidebar-link">Lista de Inmueble</a>
+                    <a href="nuevoInmueble.html" class="sidebar-link">Nuevo Inmueble</a>
+                    <a href="inmueblesAliados.html" class="sidebar-link">Inmuebles de mis Aliados</a>
+                </div>
+
+                <div class="dropdown-container">
+                    <div class="dropdown-link sidebar-link" onclick="toggleDropdown(this)">
+                        <div>
+                            <i class="fa-solid fa-users"></i>
+                            Clientes
+                        </div>
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </div>
+                    <div class="dropdown-menu">
+                        <a href="directorioClientes.html" class="sidebar-link">Directorio de Clientes</a>
+                        <a href="nuevoCliente.html" class="sidebar-link">Nuevo Cliente</a>
+                        <a href="embudoNegocios.html" class="sidebar-link">Embudo de Negocios</a>
+                        <a href="/reportes/usuarios" class="sidebar-link">Gestiones Realizadas</a>
+                        <a href="/reportes/usuarios" class="sidebar-link">Lista de Clientes</a>
+                        <a href="/reportes/usuarios" class="sidebar-link">Importar - Exportar</a>
+                    </div>
+                    <div class="dropdown-container">
+                        <div class="dropdown-link sidebar-link" onclick="toggleDropdown(this)">
+                            <div>
+                                <i class="fa-solid fa-chart-column"></i>
+                                Reportes
+                            </div>
+                            <i class="fa-solid fa-chevron-down"></i>
+                        </div>
+                        <div class="dropdown-menu">
+                            <a href="/reportes/ventas" class="sidebar-link">General</a>
+                            <a href="/reportes/usuarios" class="sidebar-link">Negocios Realizados</a>
+                            <a href="/reportes/usuarios" class="sidebar-link">Usuarios</a>
+                            <a href="/reportes/usuarios" class="sidebar-link">Propietarios</a>
+                            <a href="/reportes/usuarios" class="sidebar-link">Correos Enviados</a>
+                        </div>
+                    </div>
+
+                    <a href="/" class="sidebar-link sidebar-logout text-danger">
+                        <i class="fa fa-sign-out"></i>
+                        Cerrar Sesión
+                    </a>
+    </aside>
+    <!-- directorioClientes.html -->
+    <main class="main-content">
+        <section class="client-directory">
+            <header class="directory-header">
+                <h1><i class="fas fa-address-book"></i> Directorio de Clientes</h1>
+                <div class="summary-cards">
+                    <div class="summary-card total">
+                        <h3>Total Clientes</h3>
+                        <span id="totalClients">0</span>
+                    </div>
+                    <div class="summary-card types">
+                        <h3>Distribución</h3>
+                        <div class="donut-chart"></div>
+                    </div>
+                </div>
+            </header>
+
+            <div class="toolbar">
+                <div class="search-container">
+                    <input type="text" id="clientSearch" placeholder="Buscar clientes..." aria-label="Buscar clientes">
+                    <i class="fas fa-search"></i>
+                </div>
+
+                <div class="filters">
+                    <button class="btn-filter" id="filterDropdown">
+                        <i class="fas fa-filter"></i> Filtros <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="filter-menu">
+                        <div class="filter-group">
+                            <h4>Tipo de Cliente</h4>
+                            <label><input type="checkbox" name="type" value="Todos" checked> Todos</label>
+                            <label><input type="checkbox" name="type" value="Compradores"> Compradores</label>
+                            <label><input type="checkbox" name="type" value="Vendedores"> Vendedores</label>
+                            <label><input type="checkbox" name="type" value="Arrendatarios"> Arrendatarios</label>
+                        </div>
+                        <div class="filter-group">
+                            <h4>Estado</h4>
+                            <label><input type="checkbox" name="status" value="Activo" checked> Activo</label>
+                            <label><input type="checkbox" name="status" value="Inactivo"> Inactivo</label>
+                            <label><input type="checkbox" name="status" value="Potencial"> Potencial</label>
+                        </div>
+                    </div>
+                </div>
+                <script>
+                    const boton = document.getElementById('filterDropdown');
+                    boton.addEventListener('click', function() {
+                        const menu = document.querySelector('.filter-menu');
+                        menu.classList.toggle('active');
+                        if (menu.classList.contains('active')) {
+                            menu.style.display = 'block';
+                            boton.innerHTML = '<i class="fas fa-filter"></i> Filtros <i class="fas fa-chevron-up"></i>';
+                            menu.style.maxHeight = menu.scrollHeight + "px";
+                        } else {
+                            boton.innerHTML = '<i class="fas fa-filter"></i> Filtros <i class="fas fa-chevron-down"></i>';
+                            menu.style.display = 'none';
+                        }
+                        // Cerrar al hacer click fuera
+                        document.addEventListener('click', function(e) {
+                            if(!e.target.closest('.filters')) {
+                                menu.classList.remove('active');
+                                menu.style.display = 'none';
+                                console.log('click fuera');
+                            }
+                        });
+
+                        // Evitar cerrar al hacer click dentro
+                        menu.addEventListener('click', function(e) {
+                            e.stopPropagation();
+                        });
+
+
+                    });
+
+
+                </script>
+                <button class="btn-new-client">
+                    <a href="nuevoCliente.html" >
+                        <i class="fas fa-plus"></i> Nuevo Cliente
+                    </a>
+                </button>
+                
+            </div>
+
+            <div class="table-container">
+                <table class="client-table">
+                    <thead>
+                        <tr>
+                            <th data-sort="nombre">Nombre <i class="fas fa-sort"></i></th>
+                            <th data-sort="tipo">Tipo <i class="fas fa-sort"></i></th>
+                            <th data-sort="ubicacion">Ubicación <i class="fas fa-sort"></i></th>
+                            <th data-sort="presupuesto">Presupuesto <i class="fas fa-sort"></i></th>
+                            <th data-sort="estado">Estado <i class="fas fa-sort"></i></th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody id="clientTableBody">
+                        <!-- Skeleton loading -->
+                        <tr class="skeleton-row">
+                            <td>
+                                <div class="skeleton"></div>
+                            </td>
+                            <td>
+                                <div class="skeleton"></div>
+                            </td>
+                            <td>
+                                <div class="skeleton"></div>
+                            </td>
+                            <td>
+                                <div class="skeleton"></div>
+                            </td>
+                            <td>
+                                <div class="skeleton"></div>
+                            </td>
+                            <td>
+                                <div class="skeleton"></div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="pagination">
+                <button id="prevPage" disabled><i class="fas fa-chevron-left"></i></button>
+                <span id="currentPage">1</span>
+                <button id="nextPage" disabled><i class="fas fa-chevron-right"></i></button>
+            </div>
+        </section>
+    </main>
+
+    <!-- Modal de Confirmación -->
+    <div id="deleteModal" class="modal">
+        <div class="modal-content">
+            <p>¿Estás seguro de eliminar este cliente?</p>
+            <div class="modal-actions">
+                <button id="confirmDelete">Eliminar</button>
+                <button id="cancelDelete">Cancelar</button>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Toast Notification -->
+    <div id="toast" class="toast"></div>
+
+
+    <footer class="footer">
+        <div class="footer-grid">
+            <section class="footer-section" aria-labelledby="enlaces-utiles">
+                <h3 id="enlaces-utiles">Enlaces Útiles</h3>
+                <nav aria-label="Enlaces legales">
+                    <a href="#">Políticas de Privacidad</a>
+                    <a href="#">Términos de Servicio</a>
+                    <a href="#">Contacto</a>
+                </nav>
+            </section>
+
+            <section class="footer-section" aria-labelledby="redes-sociales">
+                <h3 id="redes-sociales">Síguenos</h3>
+                <div class="social-links">
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </section>
+
+            <section class="footer-section" aria-labelledby="newsletter">
+                <h3 id="newsletter">Newsletter</h3>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="Tu correo electrónico" aria-label="Suscribirse al newsletter">
+                    <button type="submit" class="btn-newsletter">Suscribirse</button>
+                </form>
+            </section>
+        </div>
+
+        <div class="footer-copyright">
+            <p>© 2024 Inmobiliaria. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="directorioClientes.js"></script>
+    <script>
+        function toggleDropdown(element) {
+            const container = element.closest('.dropdown-container');
+            const menu = container.querySelector('.dropdown-menu');
+            
+            // Cerrar otros dropdowns
+            document.querySelectorAll('.dropdown-container').forEach(otherContainer => {
+                if(otherContainer !== container) {
+                    otherContainer.classList.remove('active');
+                    otherContainer.querySelector('.dropdown-menu').style.maxHeight = null;
+                }
+            });
+
+            // Toggle actual
+            container.classList.toggle('active');
+            menu.style.maxHeight = menu.style.maxHeight ? null : menu.scrollHeight + "px";
+        }
+
+        // Cerrar dropdowns al hacer click fuera
+        document.addEventListener('click', (e) => {
+            if(!e.target.closest('.dropdown-container')) {
+                document.querySelectorAll('.dropdown-container').forEach(container => {
+                    container.classList.remove('active');
+                    container.querySelector('.dropdown-menu').style.maxHeight = null;
+                });
+            }
+        });
+        function toggleSidebar() {
+            const html = document.documentElement;
+            const sidebar = document.querySelector('.sidebar');
+            const backdrop = document.querySelector('.backdrop');
+            
+            sidebar.classList.toggle('active');
+            backdrop.classList.toggle('active');
+            html.classList.toggle('sidebar-open'); // Cambiamos a html en lugar de body
+        }
+    </script>
+
+</body>
+
+</html>

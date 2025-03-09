@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <!-- Meta tags mejorados para SEO -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Inmobiliaria líder con propiedades exclusivas. Encuentra tu hogar ideal en nuestra amplia selección de bienes raíces.">
+    <meta name="keywords" content="inmuebles, casas, apartamentos, propiedades, bienes raíces">
+    <meta property="og:title" content="Avilach - Propiedades Premium">
+    <meta property="og:type" content="website">
+    <title>Avilach - Propiedades Premium</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Poppins&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/your-kit-code.js" crossorigin="anonymous"></script>
+    <link rel="shortcut icon" href="img/ico.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="navbar.css">
+    <link rel="stylesheet" href="footer.css">
+</head>
+<body>
+        
+    <nav class="top-nav">
+        <button class="menu-toggle" onclick="toggleSidebar()">
+            <i class="fa-solid fa-bars"></i>
+        </button>
+        <img src="img/header.png" alt="Logo" class="logo">
+        <div class="user-profile">
+            <img src="img/user.jpeg" alt="Usuario" class="user-avatar">
+            <span>Isabela Dominguez</span>
+        </div>
+    </nav>
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+        <div class="sidebar-header">
+            <button class="sidebar-close" onclick="toggleSidebar()">&times;</button>
+            <h2>Avilach</h2>
+            <p class="text-muted">Grupo inmobiliario</p>
+        </div>
+        
+        <div class="sidebar-links">
+            <div class="dropdown-container">
+                <div class="dropdown-link sidebar-link" onclick="toggleDropdown(this)">
+                    <div>
+                        <i class="fa-solid fa-building"></i>
+                        Inmuebles
+                    </div>
+                    <i class="fa-solid fa-chevron-down"></i>
+            </div>
+            <div class="dropdown-menu">
+                <a href="index.html" class="sidebar-link">Lista de Inmueble</a>
+                <a href="nuevoInmueble.html" class="sidebar-link">Nuevo Inmueble</a>
+                <a href="inmueblesAliados.html" class="sidebar-link">Inmuebles de mis Aliados</a>
+            </div>
+            
+            <div class="dropdown-container">
+                <div class="dropdown-link sidebar-link" onclick="toggleDropdown(this)">
+                    <div>
+                        <i class="fa-solid fa-users"></i>
+                        Clientes
+                    </div>
+                    <i class="fa-solid fa-chevron-down"></i>
+            </div>
+            <div class="dropdown-menu">
+                <a href="directorioClientes.html" class="sidebar-link">Directorio de Clientes</a>
+                <a href="nuevoCliente.html" class="sidebar-link">Nuevo Cliente</a>
+                <a href="embudoNegocios.html" class="sidebar-link">Embudo de Negocios</a>
+                <a href="gestionesRealizadas.html" class="sidebar-link">Gestiones Realizadas</a>
+                <a href="importarExportar.html" class="sidebar-link">Importar - Exportar</a>
+            </div>
+            <div class="dropdown-container">
+                <div class="dropdown-link sidebar-link" onclick="toggleDropdown(this)">
+                    <div>
+                        <i class="fa-solid fa-chart-column"></i>
+                        Reportes
+                    </div>
+                    <i class="fa-solid fa-chevron-down"></i>
+            </div>
+            <div class="dropdown-menu">
+                <a href="general.html" class="sidebar-link">General</a>
+                <a href="negociosRealizados.html" class="sidebar-link">Negocios Realizados</a>
+                <a href="usuarios.html" class="sidebar-link">Usuarios</a>
+                <a href="propietarios.html" class="sidebar-link">Propietarios</a>
+            </div>
+        </div>
+
+        <a href="/" class="sidebar-link sidebar-logout text-danger">
+            <i class="fa fa-sign-out"></i>
+            Cerrar Sesión
+        </a>
+    </aside>
+    <div style="background: #1a1a1a; padding: 30px; border-radius: 15px; box-shadow: 0 0 30px rgba(255, 215, 0, 0.2);">
+        <table style="width: 100%; border-collapse: collapse; background: #2d2d2d; color: #ffd700; border-radius: 12px; overflow: hidden; font-family: Arial, sans-serif;">
+          
+          <!-- Cabecera -->
+          <tr style="background: linear-gradient(90deg, #2d2d2d 0%, #1a1a1a 100%); border-bottom: 3px solid #ffd700;">
+            <th colspan="5" style="padding: 20px; font-size: 1.5em; text-align: left; text-shadow: 0 0 10px #ffd700;">
+              🏘️ MIS INMUEBLES
+            </th>
+          </tr>
+      
+          <!-- Encabezados de columnas -->
+          <tr style="border-bottom: 2px solid #daa520;">
+            <th style="padding: 15px; text-align: left;">Tipo de inmueble</th>
+            <th style="padding: 15px; text-align: center;">Venta</th>
+            <th style="padding: 15px; text-align: center;">Alquiler</th>
+            <th style="padding: 15px; text-align: center;">Traspaso</th>
+            <th style="padding: 15px; text-align: center; border-left: 2px solid #daa520;">Total</th>
+          </tr>
+      
+          <!-- Filas de datos -->
+          <tr style="border-bottom: 1px solid #444;">
+            <td style="padding: 12px 15px; color: #daa520;">Apartaestudio</td>
+            <td style="padding: 12px 15px; text-align: center;">1</td>
+            <td style="padding: 12px 15px; text-align: center;">0</td>
+            <td style="padding: 12px 15px; text-align: center;">0</td>
+            <td style="padding: 12px 15px; text-align: center; border-left: 2px solid #444;">1</td>
+          </tr>
+      
+          <tr style="border-bottom: 1px solid #444;">
+            <td style="padding: 12px 15px; color: #daa520;">Apartamento</td>
+            <td style="padding: 12px 15px; text-align: center;">13</td>
+            <td style="padding: 12px 15px; text-align: center;">4</td>
+            <td style="padding: 12px 15px; text-align: center;">0</td>
+            <td style="padding: 12px 15px; text-align: center; border-left: 2px solid #444;">17</td>
+          </tr>
+      
+          <tr style="border-bottom: 1px solid #444;">
+            <td style="padding: 12px 15px; color: #daa520;">Casa</td>
+            <td style="padding: 12px 15px; text-align: center;">19</td>
+            <td style="padding: 12px 15px; text-align: center;">5</td>
+            <td style="padding: 12px 15px; text-align: center;">0</td>
+            <td style="padding: 12px 15px; text-align: center; border-left: 2px solid #444;">24</td>
+          </tr>
+      
+          <!-- Resto de filas con el mismo patrón -->
+          <tr style="border-bottom: 1px solid #444;">
+            <td style="padding: 12px 15px; color: #daa520;">Casa Campestre</td>
+            <td style="padding: 12px 15px; text-align: center;">4</td>
+            <td style="padding: 12px 15px; text-align: center;">0</td>
+            <td style="padding: 12px 15px; text-align: center;">0</td>
+            <td style="padding: 12px 15px; text-align: center; border-left: 2px solid #444;">4</td>
+          </tr>
+      
+          <tr style="border-bottom: 1px solid #444;">
+            <td style="padding: 12px 15px; color: #daa520;">Dúplex</td>
+            <td style="padding: 12px 15px; text-align: center;">1</td>
+            <td style="padding: 12px 15px; text-align: center;">0</td>
+            <td style="padding: 12px 15px; text-align: center;">0</td>
+            <td style="padding: 12px 15px; text-align: center; border-left: 2px solid #444;">1</td>
+          </tr>
+      
+          <tr style="border-bottom: 1px solid #444;">
+            <td style="padding: 12px 15px; color: #daa520;">Edificio</td>
+            <td style="padding: 12px 15px; text-align: center;">2</td>
+            <td style="padding: 12px 15px; text-align: center;">0</td>
+            <td style="padding: 12px 15px; text-align: center;">0</td>
+            <td style="padding: 12px 15px; text-align: center; border-left: 2px solid #444;">2</td>
+          </tr>
+      
+          <tr style="border-bottom: 1px solid #444;">
+            <td style="padding: 12px 15px; color: #daa520;">Galpon Industrial</td>
+            <td style="padding: 12px 15px; text-align: center;">2</td>
+            <td style="padding: 12px 15px; text-align: center;">3</td>
+            <td style="padding: 12px 15px; text-align: center;">0</td>
+            <td style="padding: 12px 15px; text-align: center; border-left: 2px solid #444;">5</td>
+          </tr>
+      
+          <tr style="border-bottom: 1px solid #444;">
+            <td style="padding: 12px 15px; color: #daa520;">Hoteles</td>
+            <td style="padding: 12px 15px; text-align: center;">2</td>
+            <td style="padding: 12px 15px; text-align: center;">0</td>
+            <td style="padding: 12px 15px; text-align: center;">0</td>
+            <td style="padding: 12px 15px; text-align: center; border-left: 2px solid #444;">2</td>
+          </tr>
+      
+          <tr>
+            <td style="padding: 12px 15px; color: #daa520;">Local</td>
+            <td style="padding: 12px 15px; text-align: center;">1</td>
+            <td style="padding: 12px 15px; text-align: center;">5</td>
+            <td style="padding: 12px 15px; text-align: center;">0</td>
+            <td style="padding: 12px 15px; text-align: center; border-left: 2px solid #444;">6</td>
+          </tr>
+      
+        </table>
+      </div>
+
+
+    <div style="background: #1a1a1a; padding: 30px; border-radius: 15px; box-shadow: 0 0 30px rgba(255, 215, 0, 0.2);">
+        <table style="width: 100%; border-collapse: collapse; background: #2d2d2d; color: #ffd700; border-radius: 12px; overflow: hidden;">
+          
+          <!-- Cabecera con efecto neón -->
+          <tr style="background: linear-gradient(90deg, #2d2d2d 0%, #1a1a1a 100%);">
+            <th colspan="3" style="padding: 20px; font-size: 1.5em; text-shadow: 0 0 10px #ffd700; border-bottom: 3px solid #ffd700;">
+              📊 Reporte Gráfico Premium
+            </th>
+          </tr>
+      
+          <!-- Gráfico de Barras Animado -->
+          <tr>
+            <td colspan="3" style="padding: 25px;">
+              <div style="background: #333; padding: 20px; border-radius: 8px; position: relative;">
+                <div style="display: flex; gap: 15px; height: 150px; align-items: flex-end;">
+                  <div style="flex: 1; background: linear-gradient(to top, #ffd700, #daa520); height: 80%; 
+                            border-radius: 5px 5px 0 0; animation: grow 1s ease-in-out;">
+                    <div style="position: absolute; bottom: 100%; color: #ffd700; padding: 5px;">75%</div>
+                  </div>
+                  <div style="flex: 1; background: linear-gradient(to top, #ffd700, #daa520); height: 60%; 
+                            border-radius: 5px 5px 0 0; animation: grow 1.2s ease-in-out;">
+                    <div style="position: absolute; bottom: 100%; color: #ffd700; padding: 5px;">45%</div>
+                  </div>
+                  <div style="flex: 1; background: linear-gradient(to top, #ffd700, #daa520); height: 90%; 
+                            border-radius: 5px 5px 0 0; animation: grow 0.8s ease-in-out;">
+                    <div style="position: absolute; bottom: 100%; color: #ffd700; padding: 5px;">85%</div>
+                  </div>
+                </div>
+                <div style="display: flex; justify-content: space-between; margin-top: 10px; color: #ffd700;">
+                  <span>Q1</span>
+                  <span>Q2</span>
+                  <span>Q3</span>
+                </div>
+              </div>
+            </td>
+          </tr>
+      
+          <!-- Gráfico de Donut -->
+          <tr>
+            <td colspan="3" style="padding: 25px;">
+              <div style="width: 200px; height: 200px; margin: 0 auto; position: relative;
+                        background: conic-gradient(#ffd700 0% 65%, #333 65% 100%); border-radius: 50%;
+                        box-shadow: 0 0 20px rgba(255, 215, 0, 0.3); animation: rotate 3s linear infinite;">
+                <div style="position: absolute; width: 70%; height: 70%; background: #2d2d2d;
+                          border-radius: 50%; top: 15%; left: 15%; display: flex; align-items: center;
+                          justify-content: center; font-size: 1.8em; text-shadow: 0 0 10px #ffd700;">
+                  65%
+                </div>
+              </div>
+            </td>
+          </tr>
+      
+          <!-- Mini Gráficos en Grid -->
+          <tr>
+            <td style="padding: 20px; border-top: 2px solid #ffd700;">
+              <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px;">
+                <div style="background: #333; padding: 15px; border-radius: 8px; text-align: center;">
+                  <div style="width: 80px; height: 80px; margin: 0 auto;
+                            background: radial-gradient(circle at 30% 30%, #ffd700, #2d2d2d);"></div>
+                  <div style="margin-top: 10px;">Rendimiento</div>
+                </div>
+                <div style="background: #333; padding: 15px; border-radius: 8px; text-align: center;">
+                  <div style="width: 80px; height: 80px; margin: 0 auto;
+                            background: linear-gradient(45deg, #ffd700 50%, #2d2d2d 50%);"></div>
+                  <div style="margin-top: 10px;">Meta</div>
+                </div>
+                <div style="background: #333; padding: 15px; border-radius: 8px; text-align: center;">
+                  <div style="width: 80px; height: 80px; margin: 0 auto;
+                            background: repeating-linear-gradient(45deg, #ffd700, #ffd700 10px, #2d2d2d 10px, #2d2d2d 20px);"></div>
+                  <div style="margin-top: 10px;">Progreso</div>
+                </div>
+              </div>
+            </td>
+          </tr>
+      
+        </table>
+      </div>
+      
+      <style>
+        @keyframes grow {
+          from { height: 0%; }
+          to { height: var(--target-height); }
+        }
+        
+        @keyframes rotate {
+          from { transform: rotate(0deg); }
+          to { transform: rotate(360deg); }
+        }
+      </style>
+
+<footer class="footer">
+    <div class="footer-grid">
+        <section class="footer-section" aria-labelledby="enlaces-utiles">
+            <h3 id="enlaces-utiles">Enlaces Útiles</h3>
+            <nav aria-label="Enlaces legales">
+                <a href="politicasPrivacidad.html">Políticas de Privacidad</a>
+                <a href="politicasPrivacidad.html">Términos de Servicio</a>
+                <a href="politicasPrivacidad.html">Contacto</a>
+            </nav>
+        </section>
+
+        <section class="footer-section" aria-labelledby="redes-sociales">
+            <h3 id="redes-sociales">Síguenos</h3>
+            <div class="social-links">
+                <a href="https://www.facebook.com/Avilachgrupoinmobiliario" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                <a href="https://www.instagram.com/avilach.inmobiliaria/" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.linkedin.com/in/avilach-grupo-inmobiliario-ca-173450350/" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+            </div>
+        </section>
+
+        <section class="footer-section" aria-labelledby="newsletter">
+            <h3 id="newsletter">Newsletter</h3>
+            <form class="newsletter-form">
+                <input type="email" placeholder="Tu correo electrónico" aria-label="Suscribirse al newsletter">
+                <button type="submit" class="btn-newsletter">Suscribirse</button>
+            </form>
+        </section>
+    </div>
+    
+    <div class="footer-copyright">
+        <p>© 2025 Avilach. Todos los derechos reservados.</p>
+    </div>
+</footer>
+    <script>
+        function toggleDropdown(element) {
+            const container = element.closest('.dropdown-container');
+            const menu = container.querySelector('.dropdown-menu');
+            
+            // Cerrar otros dropdowns
+            document.querySelectorAll('.dropdown-container').forEach(otherContainer => {
+                if(otherContainer !== container) {
+                    otherContainer.classList.remove('active');
+                    otherContainer.querySelector('.dropdown-menu').style.maxHeight = null;
+                }
+            });
+
+            // Toggle actual
+            container.classList.toggle('active');
+            menu.style.maxHeight = menu.style.maxHeight ? null : menu.scrollHeight + "px";
+        }
+
+        // Cerrar dropdowns al hacer click fuera
+        document.addEventListener('click', (e) => {
+            if(!e.target.closest('.dropdown-container')) {
+                document.querySelectorAll('.dropdown-container').forEach(container => {
+                    container.classList.remove('active');
+                    container.querySelector('.dropdown-menu').style.maxHeight = null;
+                });
+            }
+        });
+        function toggleSidebar() {
+            const html = document.documentElement;
+            const sidebar = document.querySelector('.sidebar');
+            const backdrop = document.querySelector('.backdrop');
+            
+            sidebar.classList.toggle('active');
+            backdrop.classList.toggle('active');
+            html.classList.toggle('sidebar-open'); // Cambiamos a html en lugar de body
+        }
+    </script>
+</body>
+</html>

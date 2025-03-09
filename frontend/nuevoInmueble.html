@@ -16,78 +16,76 @@
 </head>
 <body>
   <!-- SIDEBAR -->
-    <nav class="top-nav">
-        <button class="menu-toggle" onclick="toggleSidebar()">
-            <i class="fa-solid fa-bars"></i>
-        </button>
-        <img src="img/header.png" alt="Logo" class="logo">
-        <div class="user-profile">
-            <img src="img/user.jpeg" alt="Usuario" class="user-avatar">
-            <span>Isabela Dominguez</span>
-        </div>
-    </nav>
+  <nav class="top-nav">
+    <button class="menu-toggle" onclick="toggleSidebar()">
+        <i class="fa-solid fa-bars"></i>
+    </button>
+    <img src="img/header.png" alt="Logo" class="logo">
+    <div class="user-profile">
+        <img src="img/user.jpeg" alt="Usuario" class="user-avatar">
+        <span>Isabela Dominguez</span>
+    </div>
+</nav>
 
-    <!-- Sidebar -->
-    <aside class="sidebar">
-        <div class="sidebar-header">
-            <button class="sidebar-close" onclick="toggleSidebar()">&times;</button>
-            <h2>Avilach</h2>
-            <p class="text-muted">Grupo inmobiliario</p>
+<!-- Sidebar -->
+<aside class="sidebar">
+    <div class="sidebar-header">
+        <button class="sidebar-close" onclick="toggleSidebar()">&times;</button>
+        <h2>Avilach</h2>
+        <p class="text-muted">Grupo inmobiliario</p>
+    </div>
+    
+    <div class="sidebar-links">
+        <div class="dropdown-container">
+            <div class="dropdown-link sidebar-link" onclick="toggleDropdown(this)">
+                <div>
+                    <i class="fa-solid fa-building"></i>
+                    Inmuebles
+                </div>
+                <i class="fa-solid fa-chevron-down"></i>
+        </div>
+        <div class="dropdown-menu">
+            <a href="index.html" class="sidebar-link">Lista de Inmueble</a>
+            <a href="nuevoInmueble.html" class="sidebar-link">Nuevo Inmueble</a>
+            <a href="inmueblesAliados.html" class="sidebar-link">Inmuebles de mis Aliados</a>
         </div>
         
-        <div class="sidebar-links">
-            <div class="dropdown-container">
-                <div class="dropdown-link sidebar-link" onclick="toggleDropdown(this)">
-                    <div>
-                        <i class="fa-solid fa-building"></i>
-                        Inmuebles
-                    </div>
-                    <i class="fa-solid fa-chevron-down"></i>
-            </div>
-            <div class="dropdown-menu">
-                <a href="index.html" class="sidebar-link">Lista de Inmueble</a>
-                <a href="nuevoInmueble.html" class="sidebar-link">Nuevo Inmueble</a>
-                <a href="inmueblesAliados.html" class="sidebar-link">Inmuebles de mis Aliados</a>
-            </div>
-            
-            <div class="dropdown-container">
-                <div class="dropdown-link sidebar-link" onclick="toggleDropdown(this)">
-                    <div>
-                        <i class="fa-solid fa-users"></i>
-                        Clientes
-                    </div>
-                    <i class="fa-solid fa-chevron-down"></i>
-            </div>
-            <div class="dropdown-menu">
-                <a href="directorioClientes.html" class="sidebar-link">Directorio de Clientes</a>
-                <a href="nuevoCliente.html" class="sidebar-link">Nuevo Cliente</a>
-                <a href="embudoNegocios.html" class="sidebar-link">Embudo de Negocios</a>
-                <a href="/reportes/usuarios" class="sidebar-link">Gestiones Realizadas</a>
-                <a href="/reportes/usuarios" class="sidebar-link">Lista de Clientes</a>
-                <a href="/reportes/usuarios" class="sidebar-link">Importar - Exportar</a>
-            </div>
-            <div class="dropdown-container">
-                <div class="dropdown-link sidebar-link" onclick="toggleDropdown(this)">
-                    <div>
-                        <i class="fa-solid fa-chart-column"></i>
-                        Reportes
-                    </div>
-                    <i class="fa-solid fa-chevron-down"></i>
-            </div>
-            <div class="dropdown-menu">
-                <a href="/reportes/ventas" class="sidebar-link">General</a>
-                <a href="/reportes/usuarios" class="sidebar-link">Negocios Realizados</a>
-                <a href="/reportes/usuarios" class="sidebar-link">Usuarios</a>
-                <a href="/reportes/usuarios" class="sidebar-link">Propietarios</a>
-                <a href="/reportes/usuarios" class="sidebar-link">Correos Enviados</a>
-            </div>
+        <div class="dropdown-container">
+            <div class="dropdown-link sidebar-link" onclick="toggleDropdown(this)">
+                <div>
+                    <i class="fa-solid fa-users"></i>
+                    Clientes
+                </div>
+                <i class="fa-solid fa-chevron-down"></i>
         </div>
+        <div class="dropdown-menu">
+            <a href="directorioClientes.html" class="sidebar-link">Directorio de Clientes</a>
+            <a href="nuevoCliente.html" class="sidebar-link">Nuevo Cliente</a>
+            <a href="embudoNegocios.html" class="sidebar-link">Embudo de Negocios</a>
+            <a href="gestionesRealizadas.html" class="sidebar-link">Gestiones Realizadas</a>
+            <a href="importarExportar.html" class="sidebar-link">Importar - Exportar</a>
+        </div>
+        <div class="dropdown-container">
+            <div class="dropdown-link sidebar-link" onclick="toggleDropdown(this)">
+                <div>
+                    <i class="fa-solid fa-chart-column"></i>
+                    Reportes
+                </div>
+                <i class="fa-solid fa-chevron-down"></i>
+        </div>
+        <div class="dropdown-menu">
+            <a href="general.html" class="sidebar-link">General</a>
+            <a href="negociosRealizados.html" class="sidebar-link">Negocios Realizados</a>
+            <a href="usuarios.html" class="sidebar-link">Usuarios</a>
+            <a href="propietarios.html" class="sidebar-link">Propietarios</a>
+        </div>
+    </div>
 
-        <a href="/" class="sidebar-link sidebar-logout text-danger">
-            <i class="fa fa-sign-out"></i>
-            Cerrar Sesión
-        </a>
-    </aside>
+    <a href="/" class="sidebar-link sidebar-logout text-danger">
+        <i class="fa fa-sign-out"></i>
+        Cerrar Sesión
+    </a>
+</aside>
 
     <!-- Backdrop -->
     <div class="backdrop" onclick="toggleSidebar()"></div>
@@ -217,38 +215,39 @@
   </main>
 
   <!-- Pie de página elegante -->
-  <footer>
-    <div class="footer-content">
-      <section class="footer-links" aria-labelledby="enlaces-utiles">
-        <h3 id="enlaces-utiles">Enlaces Útiles</h3>
-        <nav>
-          <ul>
-            <li><a href="#">Políticas de Privacidad</a></li>
-            <li><a href="#">Términos de Servicio</a></li>
-            <li><a href="#">Contacto</a></li>
-          </ul>
-        </nav>
-      </section>
-      <section class="footer-social" aria-labelledby="redes-sociales">
-        <h3 id="redes-sociales">Síguenos</h3>
-        <div class="social-links">
-          <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
-          <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-          <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
-        </div>
-      </section>
-      <section class="footer-newsletter" aria-labelledby="newsletter">
-        <h3 id="newsletter">Newsletter</h3>
-        <form class="newsletter-form">
-          <input type="email" placeholder="Tu correo electrónico" aria-label="Suscribirse al newsletter">
-          <button type="submit" class="btn-newsletter">Suscribirse</button>
-        </form>
-      </section>
+  <footer class="footer">
+    <div class="footer-grid">
+        <section class="footer-section" aria-labelledby="enlaces-utiles">
+            <h3 id="enlaces-utiles">Enlaces Útiles</h3>
+            <nav aria-label="Enlaces legales">
+                <a href="politicasPrivacidad.html">Políticas de Privacidad</a>
+                <a href="politicasPrivacidad.html">Términos de Servicio</a>
+                <a href="politicasPrivacidad.html">Contacto</a>
+            </nav>
+        </section>
+
+        <section class="footer-section" aria-labelledby="redes-sociales">
+            <h3 id="redes-sociales">Síguenos</h3>
+            <div class="social-links">
+                <a href="https://www.facebook.com/Avilachgrupoinmobiliario" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                <a href="https://www.instagram.com/avilach.inmobiliaria/" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.linkedin.com/in/avilach-grupo-inmobiliario-ca-173450350/" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+            </div>
+        </section>
+
+        <section class="footer-section" aria-labelledby="newsletter">
+            <h3 id="newsletter">Newsletter</h3>
+            <form class="newsletter-form">
+                <input type="email" placeholder="Tu correo electrónico" aria-label="Suscribirse al newsletter">
+                <button type="submit" class="btn-newsletter">Suscribirse</button>
+            </form>
+        </section>
     </div>
-    <div class="footer-bottom">
-      <p>© 2024 Inmobiliaria. Todos los derechos reservados.</p>
+    
+    <div class="footer-copyright">
+        <p>© 2025 Avilach. Todos los derechos reservados.</p>
     </div>
-  </footer>
+</footer>
 
   <!-- Scripts para el menú lateral y dropdowns -->
   <script>

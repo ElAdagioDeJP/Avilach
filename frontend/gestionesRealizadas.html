@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <!-- Meta tags mejorados para SEO -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Inmobiliaria líder con propiedades exclusivas. Encuentra tu hogar ideal en nuestra amplia selección de bienes raíces.">
+    <meta name="keywords" content="inmuebles, casas, apartamentos, propiedades, bienes raíces">
+    <meta property="og:title" content="Avilach - Propiedades Premium">
+    <meta property="og:type" content="website">
+    <title>Avilach - Propiedades Premium</title>
+    <link rel="stylesheet" href="gestionesRealizadas.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Poppins&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/your-kit-code.js" crossorigin="anonymous"></script>
+    <link rel="shortcut icon" href="img/ico.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="navbar.css">
+    <link rel="stylesheet" href="footer.css">
+</head>
+<body>
+    <nav class="top-nav">
+        <button class="menu-toggle" onclick="toggleSidebar()">
+            <i class="fa-solid fa-bars"></i>
+        </button>
+        <img src="img/header.png" alt="Logo" class="logo">
+        <div class="user-profile">
+            <img src="img/user.jpeg" alt="Usuario" class="user-avatar">
+            <span>Isabela Dominguez</span>
+        </div>
+    </nav>
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+        <div class="sidebar-header">
+            <button class="sidebar-close" onclick="toggleSidebar()">&times;</button>
+            <h2>Avilach</h2>
+            <p class="text-muted">Grupo inmobiliario</p>
+        </div>
+        
+        <div class="sidebar-links">
+            <div class="dropdown-container">
+                <div class="dropdown-link sidebar-link" onclick="toggleDropdown(this)">
+                    <div>
+                        <i class="fa-solid fa-building"></i>
+                        Inmuebles
+                    </div>
+                    <i class="fa-solid fa-chevron-down"></i>
+            </div>
+            <div class="dropdown-menu">
+                <a href="index.html" class="sidebar-link">Lista de Inmueble</a>
+                <a href="nuevoInmueble.html" class="sidebar-link">Nuevo Inmueble</a>
+                <a href="inmueblesAliados.html" class="sidebar-link">Inmuebles de mis Aliados</a>
+            </div>
+            
+            <div class="dropdown-container">
+                <div class="dropdown-link sidebar-link" onclick="toggleDropdown(this)">
+                    <div>
+                        <i class="fa-solid fa-users"></i>
+                        Clientes
+                    </div>
+                    <i class="fa-solid fa-chevron-down"></i>
+            </div>
+            <div class="dropdown-menu">
+                <a href="directorioClientes.html" class="sidebar-link">Directorio de Clientes</a>
+                <a href="nuevoCliente.html" class="sidebar-link">Nuevo Cliente</a>
+                <a href="embudoNegocios.html" class="sidebar-link">Embudo de Negocios</a>
+                <a href="gestionesRealizadas.html" class="sidebar-link">Gestiones Realizadas</a>
+                <a href="importarExportar.html" class="sidebar-link">Importar - Exportar</a>
+            </div>
+            <div class="dropdown-container">
+                <div class="dropdown-link sidebar-link" onclick="toggleDropdown(this)">
+                    <div>
+                        <i class="fa-solid fa-chart-column"></i>
+                        Reportes
+                    </div>
+                    <i class="fa-solid fa-chevron-down"></i>
+            </div>
+            <div class="dropdown-menu">
+                <a href="general.html" class="sidebar-link">General</a>
+                <a href="negociosRealizados.html" class="sidebar-link">Negocios Realizados</a>
+                <a href="usuarios.html" class="sidebar-link">Usuarios</a>
+                <a href="propietarios.html" class="sidebar-link">Propietarios</a>
+            </div>
+        </div>
+
+        <a href="/" class="sidebar-link sidebar-logout text-danger">
+            <i class="fa fa-sign-out"></i>
+            Cerrar Sesión
+        </a>
+    </aside>
+    <main class="main-content">
+    <h1 class="page-title">Gestiones Realizadas</h1>
+    
+    <div class="transactions-container">
+        <!-- Filtros y búsqueda -->
+        <div class="transactions-toolbar">
+            <div class="search-container">
+                <input type="text" placeholder="Buscar gestión...">
+                <i class="fas fa-search"></i>
+            </div>
+            <select class="filter-select">
+                <option>Todas las gestiones</option>
+                <option>Ventas concluidas</option>
+                <option>Alquileres activos</option>
+                <option>Negociaciones</option>
+            </select>
+        </div>
+
+        <!-- Listado de gestiones -->
+        <div class="transactions-grid">
+            <!-- Tarjeta 1 -->
+            <article class="transaction-card">
+                <div class="transaction-header">
+                    <span class="transaction-date">22/06/2024</span>
+                    <span class="transaction-status completed">Concluida</span>
+                </div>
+                <div class="transaction-body">
+                    <div class="transaction-type">
+                        <i class="fas fa-handshake"></i>
+                        Arrendamiento comercial
+                    </div>
+                    <div class="transaction-property">
+                        <i class="fas fa-building"></i>
+                        Local en Centro Empresarial Norte
+                    </div>
+                    <div class="transaction-client">
+                        <i class="fas fa-user-tie"></i>
+                        Cliente: Grupo Inversiones S.A.
+                    </div>
+                    <div class="transaction-price">
+                        <i class="fas fa-dollar-sign"></i>
+                        Valor: $1,200,000
+                    </div>
+                </div>
+                <div class="transaction-actions">
+                    <button class="btn-action">
+                        <i class="fas fa-file-contract"></i>
+                        Ver contrato
+                    </button>
+                </div>
+            </article>
+        
+            <!-- Tarjeta 2 -->
+            <article class="transaction-card">
+                <div class="transaction-header">
+                    <span class="transaction-date">18/07/2024</span>
+                    <span class="transaction-status pending">En Proceso</span>
+                </div>
+                <div class="transaction-body">
+                    <div class="transaction-type">
+                        <i class="fas fa-house-user"></i>
+                        Renta residencial
+                    </div>
+                    <div class="transaction-property">
+                        <i class="fas fa-warehouse"></i>
+                        Penthouse en Torre Esmeralda
+                    </div>
+                    <div class="transaction-client">
+                        <i class="fas fa-user-graduate"></i>
+                        Cliente: Dr. Roberto Vizcaíno
+                    </div>
+                    <div class="transaction-price">
+                        <i class="fas fa-dollar-sign"></i>
+                        Valor: $15,000/mes
+                    </div>
+                </div>
+                <div class="transaction-actions">
+                    <button class="btn-action">
+                        <i class="fas fa-file-contract"></i>
+                        Ver contrato
+                    </button>
+                </div>
+            </article>
+        
+            <!-- Tarjeta 3 -->
+            <article class="transaction-card">
+                <div class="transaction-header">
+                    <span class="transaction-date">05/08/2024</span>
+                    <span class="transaction-status completed">Concluida</span>
+                </div>
+                <div class="transaction-body">
+                    <div class="transaction-type">
+                        <i class="fas fa-landmark"></i>
+                        Venta de terreno
+                    </div>
+                    <div class="transaction-property">
+                        <i class="fas fa-tree"></i>
+                        Lote en Bosques de Santa Fe
+                    </div>
+                    <div class="transaction-client">
+                        <i class="fas fa-user-astronaut"></i>
+                        Cliente: SpaceX Latam
+                    </div>
+                    <div class="transaction-price">
+                        <i class="fas fa-dollar-sign"></i>
+                        Valor: $2,750,000
+                    </div>
+                </div>
+                <div class="transaction-actions">
+                    <button class="btn-action">
+                        <i class="fas fa-file-contract"></i>
+                        Ver contrato
+                    </button>
+                </div>
+            </article>
+        
+            <!-- Tarjeta 4 -->
+            <article class="transaction-card">
+                <div class="transaction-header">
+                    <span class="transaction-date">12/09/2024</span>
+                    <span class="transaction-status pending">En Proceso</span>
+                </div>
+                <div class="transaction-body">
+                    <div class="transaction-type">
+                        <i class="fas fa-hotel"></i>
+                        Venta de complejo turístico
+                    </div>
+                    <div class="transaction-property">
+                        <i class="fas fa-umbrella-beach"></i>
+                        Villa Playa Escondida
+                    </div>
+                    <div class="transaction-client">
+                        <i class="fas fa-user-crown"></i>
+                        Cliente: Royal Vacations Inc.
+                    </div>
+                    <div class="transaction-price">
+                        <i class="fas fa-dollar-sign"></i>
+                        Valor: $8,900,000
+                    </div>
+                </div>
+                <div class="transaction-actions">
+                    <button class="btn-action">
+                        <i class="fas fa-file-contract"></i>
+                        Ver contrato
+                    </button>
+                </div>
+            </article>
+        
+            <!-- Tarjeta 5 -->
+            <article class="transaction-card">
+                <div class="transaction-header">
+                    <span class="transaction-date">30/05/2024</span>
+                    <span class="transaction-status completed">Concluida</span>
+                </div>
+                <div class="transaction-body">
+                    <div class="transaction-type">
+                        <i class="fas fa-city"></i>
+                        Venta de departamento
+                    </div>
+                    <div class="transaction-property">
+                        <i class="fas fa-building-circle-check"></i>
+                        Loft en Distrito Financiero
+                    </div>
+                    <div class="transaction-client">
+                        <i class="fas fa-user-tie"></i>
+                        Cliente: Carlos Slim Domit
+                    </div>
+                    <div class="transaction-price">
+                        <i class="fas fa-dollar-sign"></i>
+                        Valor: $3,450,000
+                    </div>
+                </div>
+                <div class="transaction-actions">
+                    <button class="btn-action">
+                        <i class="fas fa-file-contract"></i>
+                        Ver contrato
+                    </button>
+                </div>
+            </article>
+        
+            <!-- Tarjeta 6 -->
+            <article class="transaction-card">
+                <div class="transaction-header">
+                    <span class="transaction-date">01/10/2024</span>
+                    <span class="transaction-status pending">En Proceso</span>
+                </div>
+                <div class="transaction-body">
+                    <div class="transaction-type">
+                        <i class="fas fa-handshake-simple"></i>
+                        Negociación exclusiva
+                    </div>
+                    <div class="transaction-property">
+                        <i class="fas fa-gopuram"></i>
+                        Hacienda Colonial del Siglo XVIII
+                    </div>
+                    <div class="transaction-client">
+                        <i class="fas fa-user-ninja"></i>
+                        Cliente: Anónimo (NDA)
+                    </div>
+                    <div class="transaction-price">
+                        <i class="fas fa-dollar-sign"></i>
+                        Valor: $12,000,000
+                    </div>
+                </div>
+                <div class="transaction-actions">
+                    <button class="btn-action">
+                        <i class="fas fa-file-contract"></i>
+                        Ver contrato
+                    </button>
+                </div>
+            </article>
+        
+            <!-- Tarjeta 7 -->
+            <article class="transaction-card">
+                <div class="transaction-header">
+                    <span class="transaction-date">14/07/2024</span>
+                    <span class="transaction-status completed">Concluida</span>
+                </div>
+                <div class="transaction-body">
+                    <div class="transaction-type">
+                        <i class="fas fa-house-chimney"></i>
+                        Venta de casa club
+                    </div>
+                    <div class="transaction-property">
+                        <i class="fas fa-infinity"></i>
+                        Residencia Country Club
+                    </div>
+                    <div class="transaction-client">
+                        <i class="fas fa-user-secret"></i>
+                        Cliente: Familia Bosch-Gorgona
+                    </div>
+                    <div class="transaction-price">
+                        <i class="fas fa-dollar-sign"></i>
+                        Valor: $6,200,000
+                    </div>
+                </div>
+                <div class="transaction-actions">
+                    <button class="btn-action">
+                        <i class="fas fa-file-contract"></i>
+                        Ver contrato
+                    </button>
+                </div>
+            </article>
+        
+            <!-- Tarjeta 8 -->
+            <article class="transaction-card">
+                <div class="transaction-header">
+                    <span class="transaction-date">09/11/2024</span>
+                    <span class="transaction-status pending">En Proceso</span>
+                </div>
+                <div class="transaction-body">
+                    <div class="transaction-type">
+                        <i class="fas fa-tower-observation"></i>
+                        Desarrollo inmobiliario
+                    </div>
+                    <div class="transaction-property">
+                        <i class="fas fa-chess-rook"></i>
+                        Proyecto Torres Diamante
+                    </div>
+                    <div class="transaction-client">
+                        <i class="fas fa-user-visor"></i>
+                        Cliente: Grupo Financiero HSBC
+                    </div>
+                    <div class="transaction-price">
+                        <i class="fas fa-dollar-sign"></i>
+                        Valor: $25,000,000
+                    </div>
+                </div>
+                <div class="transaction-actions">
+                    <button class="btn-action">
+                        <i class="fas fa-file-contract"></i>
+                        Ver contrato
+                    </button>
+                </div>
+            </article>
+        </div>
+    </div>
+</main>
+
+
+<footer class="footer">
+    <div class="footer-grid">
+        <section class="footer-section" aria-labelledby="enlaces-utiles">
+            <h3 id="enlaces-utiles">Enlaces Útiles</h3>
+            <nav aria-label="Enlaces legales">
+                <a href="politicasPrivacidad.html">Políticas de Privacidad</a>
+                <a href="politicasPrivacidad.html">Términos de Servicio</a>
+                <a href="politicasPrivacidad.html">Contacto</a>
+            </nav>
+        </section>
+
+        <section class="footer-section" aria-labelledby="redes-sociales">
+            <h3 id="redes-sociales">Síguenos</h3>
+            <div class="social-links">
+                <a href="https://www.facebook.com/Avilachgrupoinmobiliario" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                <a href="https://www.instagram.com/avilach.inmobiliaria/" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.linkedin.com/in/avilach-grupo-inmobiliario-ca-173450350/" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+            </div>
+        </section>
+
+        <section class="footer-section" aria-labelledby="newsletter">
+            <h3 id="newsletter">Newsletter</h3>
+            <form class="newsletter-form">
+                <input type="email" placeholder="Tu correo electrónico" aria-label="Suscribirse al newsletter">
+                <button type="submit" class="btn-newsletter">Suscribirse</button>
+            </form>
+        </section>
+    </div>
+    
+    <div class="footer-copyright">
+        <p>© 2025 Avilach. Todos los derechos reservados.</p>
+    </div>
+</footer>
+    <script>
+        function toggleDropdown(element) {
+            const container = element.closest('.dropdown-container');
+            const menu = container.querySelector('.dropdown-menu');
+            
+            // Cerrar otros dropdowns
+            document.querySelectorAll('.dropdown-container').forEach(otherContainer => {
+                if(otherContainer !== container) {
+                    otherContainer.classList.remove('active');
+                    otherContainer.querySelector('.dropdown-menu').style.maxHeight = null;
+                }
+            });
+
+            // Toggle actual
+            container.classList.toggle('active');
+            menu.style.maxHeight = menu.style.maxHeight ? null : menu.scrollHeight + "px";
+        }
+
+        // Cerrar dropdowns al hacer click fuera
+        document.addEventListener('click', (e) => {
+            if(!e.target.closest('.dropdown-container')) {
+                document.querySelectorAll('.dropdown-container').forEach(container => {
+                    container.classList.remove('active');
+                    container.querySelector('.dropdown-menu').style.maxHeight = null;
+                });
+            }
+        });
+        function toggleSidebar() {
+            const html = document.documentElement;
+            const sidebar = document.querySelector('.sidebar');
+            const backdrop = document.querySelector('.backdrop');
+            
+            sidebar.classList.toggle('active');
+            backdrop.classList.toggle('active');
+            html.classList.toggle('sidebar-open'); // Cambiamos a html en lugar de body
+        }
+    </script>
+</body>
+</html>

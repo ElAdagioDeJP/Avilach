@@ -33,7 +33,7 @@
             <h2>Avilach</h2>
             <p class="text-muted">Grupo inmobiliario</p>
         </div>
-
+        
         <div class="sidebar-links">
             <div class="dropdown-container">
                 <div class="dropdown-link sidebar-link" onclick="toggleDropdown(this)">
@@ -42,56 +42,66 @@
                         Inmuebles
                     </div>
                     <i class="fa-solid fa-chevron-down"></i>
-                </div>
-                <div class="dropdown-menu">
-                    <a href="index.html" class="sidebar-link">Lista de Inmueble</a>
-                    <a href="nuevoInmueble.html" class="sidebar-link">Nuevo Inmueble</a>
-                    <a href="inmueblesAliados.html" class="sidebar-link">Inmuebles de mis Aliados</a>
-                </div>
+            </div>
+            <div class="dropdown-menu">
+                <a href="index.html" class="sidebar-link">Lista de Inmueble</a>
+                <a href="nuevoInmueble.html" class="sidebar-link">Nuevo Inmueble</a>
+                <a href="inmueblesAliados.html" class="sidebar-link">Inmuebles de mis Aliados</a>
+            </div>
+            
+            <div class="dropdown-container">
+                <div class="dropdown-link sidebar-link" onclick="toggleDropdown(this)">
+                    <div>
+                        <i class="fa-solid fa-users"></i>
+                        Clientes
+                    </div>
+                    <i class="fa-solid fa-chevron-down"></i>
+            </div>
+            <div class="dropdown-menu">
+                <a href="directorioClientes.html" class="sidebar-link">Directorio de Clientes</a>
+                <a href="nuevoCliente.html" class="sidebar-link">Nuevo Cliente</a>
+                <a href="embudoNegocios.html" class="sidebar-link">Embudo de Negocios</a>
+                <a href="gestionesRealizadas.html" class="sidebar-link">Gestiones Realizadas</a>
+                <a href="importarExportar.html" class="sidebar-link">Importar - Exportar</a>
+            </div>
+            <div class="dropdown-container">
+                <div class="dropdown-link sidebar-link" onclick="toggleDropdown(this)">
+                    <div>
+                        <i class="fa-solid fa-chart-column"></i>
+                        Reportes
+                    </div>
+                    <i class="fa-solid fa-chevron-down"></i>
+            </div>
+            <div class="dropdown-menu">
+                <a href="general.html" class="sidebar-link">General</a>
+                <a href="negociosRealizados.html" class="sidebar-link">Negocios Realizados</a>
+                <a href="usuarios.html" class="sidebar-link">Usuarios</a>
+                <a href="propietarios.html" class="sidebar-link">Propietarios</a>
+            </div>
+        </div>
 
-                <div class="dropdown-container">
-                    <div class="dropdown-link sidebar-link" onclick="toggleDropdown(this)">
-                        <div>
-                            <i class="fa-solid fa-users"></i>
-                            Clientes
-                        </div>
-                        <i class="fa-solid fa-chevron-down"></i>
-                    </div>
-                    <div class="dropdown-menu">
-                        <a href="directorioClientes.html" class="sidebar-link">Directorio de Clientes</a>
-                        <a href="nuevoCliente.html" class="sidebar-link">Nuevo Cliente</a>
-                        <a href="embudoNegocios.html" class="sidebar-link">Embudo de Negocios</a>
-                        <a href="/reportes/usuarios" class="sidebar-link">Gestiones Realizadas</a>
-                        <a href="/reportes/usuarios" class="sidebar-link">Lista de Clientes</a>
-                        <a href="/reportes/usuarios" class="sidebar-link">Importar - Exportar</a>
-                    </div>
-                    <div class="dropdown-container">
-                        <div class="dropdown-link sidebar-link" onclick="toggleDropdown(this)">
-                            <div>
-                                <i class="fa-solid fa-chart-column"></i>
-                                Reportes
-                            </div>
-                            <i class="fa-solid fa-chevron-down"></i>
-                        </div>
-                        <div class="dropdown-menu">
-                            <a href="/reportes/ventas" class="sidebar-link">General</a>
-                            <a href="/reportes/usuarios" class="sidebar-link">Negocios Realizados</a>
-                            <a href="/reportes/usuarios" class="sidebar-link">Usuarios</a>
-                            <a href="/reportes/usuarios" class="sidebar-link">Propietarios</a>
-                            <a href="/reportes/usuarios" class="sidebar-link">Correos Enviados</a>
-                        </div>
-                    </div>
-
-                    <a href="/" class="sidebar-link sidebar-logout text-danger">
-                        <i class="fa fa-sign-out"></i>
-                        Cerrar Sesión
-                    </a>
+        <a href="/" class="sidebar-link sidebar-logout text-danger">
+            <i class="fa fa-sign-out"></i>
+            Cerrar Sesión
+        </a>
     </aside>
     <!-- directorioClientes.html -->
     <main class="main-content">
+                    <div class="page-header">
+                <div class="header-content">
+                    <h1 class="gold-title"><i class="fa-solid fa-user"></i> Directorio de Clientes</h1>
+                    <div class="header-actions">
+
+                        <button class="btn-new-client">
+                        <a href="nuevoCliente.html" >
+                            <i class="fas fa-plus"></i> Nuevo Cliente
+                        </a>
+                </button>
+                    </div>
+                </div>
+            </div>
         <section class="client-directory">
             <header class="directory-header">
-                <h1><i class="fas fa-address-book"></i> Directorio de Clientes</h1>
                 <div class="summary-cards">
                     <div class="summary-card total">
                         <h3>Total Clientes</h3>
@@ -162,11 +172,7 @@
 
 
                 </script>
-                <button class="btn-new-client">
-                    <a href="nuevoCliente.html" >
-                        <i class="fas fa-plus"></i> Nuevo Cliente
-                    </a>
-                </button>
+                
                 
             </div>
 
@@ -207,7 +213,44 @@
                     </tbody>
                 </table>
             </div>
+            <!-- <script>
+                const tbody = document.getElementById('clientTableBody');
+                // Agregar evento a cada botón de eliminar
+                tbody.addEventListener('click', function(e) {
+                    if(e.target.classList.contains('deleteClient')) {
+                        console.log('Eliminar cliente');
+                        const modal = document.getElementById('deleteModal');
+                        modal.style.display = 'block';
+                    }
+                });
+            </script> -->
+            <!-- Script para activar el modal para cada vez que en un registro se da click al boton con la clase deleteClient -->
+            <script>
+                const tbody = document.getElementById('clientTableBody');
+                // Agregar evento a cada botón de eliminar
+                tbody.addEventListener('click', function(e) {
+                    console.log(e.target);
+                    if(e.target.classList.contains('deleteClient')) {
+                        console.log('Eliminar cliente');
+                        const modal = document.getElementById('deleteModal');
+                        modal.style.display = 'block';
+                    }
+                });
 
+                // Click fuera del modal
+                window.addEventListener('click', function(e) {
+                    if(e.target === modal) {
+                        console.log('click fuera'); 
+                        // const modal = document.getElementById('deleteModal');
+                        // modal.style.display = 'none';
+                    }
+                });
+                const boton_salida = document.getElementById('cancelDelete');
+                boton_salida.addEventListener('click', function() {
+                    const modal = document.getElementById('deleteModal');
+                    modal.style.display = 'none';
+                });
+            </script>
             <div class="pagination">
                 <button id="prevPage" disabled><i class="fas fa-chevron-left"></i></button>
                 <span id="currentPage">1</span>
@@ -229,28 +272,28 @@
     
     <!-- Toast Notification -->
     <div id="toast" class="toast"></div>
-
+    
 
     <footer class="footer">
         <div class="footer-grid">
             <section class="footer-section" aria-labelledby="enlaces-utiles">
                 <h3 id="enlaces-utiles">Enlaces Útiles</h3>
                 <nav aria-label="Enlaces legales">
-                    <a href="#">Políticas de Privacidad</a>
-                    <a href="#">Términos de Servicio</a>
-                    <a href="#">Contacto</a>
+                    <a href="politicasPrivacidad.html">Políticas de Privacidad</a>
+                    <a href="politicasPrivacidad.html">Términos de Servicio</a>
+                    <a href="politicasPrivacidad.html">Contacto</a>
                 </nav>
             </section>
-
+    
             <section class="footer-section" aria-labelledby="redes-sociales">
                 <h3 id="redes-sociales">Síguenos</h3>
                 <div class="social-links">
-                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
-                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://www.facebook.com/Avilachgrupoinmobiliario" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                    <a href="https://www.instagram.com/avilach.inmobiliaria/" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.linkedin.com/in/avilach-grupo-inmobiliario-ca-173450350/" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
                 </div>
             </section>
-
+    
             <section class="footer-section" aria-labelledby="newsletter">
                 <h3 id="newsletter">Newsletter</h3>
                 <form class="newsletter-form">
@@ -259,13 +302,15 @@
                 </form>
             </section>
         </div>
-
+        
         <div class="footer-copyright">
-            <p>© 2024 Inmobiliaria. Todos los derechos reservados.</p>
+            <p>© 2025 Avilach. Todos los derechos reservados.</p>
         </div>
     </footer>
-
+    
     <script src="directorioClientes.js"></script>
+
+    
     <script>
         function toggleDropdown(element) {
             const container = element.closest('.dropdown-container');
@@ -303,6 +348,22 @@
             html.classList.toggle('sidebar-open'); // Cambiamos a html en lugar de body
         }
     </script>
+
+    <!-- <script>
+        const btn_eliminar = document.getElementById('deleteClient');
+        const modal = document.getElementById('deleteModal');
+
+        btn_eliminar.addEventListener('click', function() {
+            modal.style.display = 'block';
+        });
+
+        // Click fuera del modal
+        window.addEventListener('click', function(e) {
+            if(e.target === modal) {
+                modal.style.display = 'none';
+            }
+        });
+    </script> -->
 
 </body>
 

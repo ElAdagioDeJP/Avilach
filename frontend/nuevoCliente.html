@@ -11,7 +11,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
-    <!-- SIDEBAR -->
     <nav class="top-nav">
         <button class="menu-toggle" onclick="toggleSidebar()">
             <i class="fa-solid fa-bars"></i>
@@ -58,9 +57,8 @@
                 <a href="directorioClientes.html" class="sidebar-link">Directorio de Clientes</a>
                 <a href="nuevoCliente.html" class="sidebar-link">Nuevo Cliente</a>
                 <a href="embudoNegocios.html" class="sidebar-link">Embudo de Negocios</a>
-                <a href="/reportes/usuarios" class="sidebar-link">Gestiones Realizadas</a>
-                <a href="/reportes/usuarios" class="sidebar-link">Lista de Clientes</a>
-                <a href="/reportes/usuarios" class="sidebar-link">Importar - Exportar</a>
+                <a href="gestionesRealizadas.html" class="sidebar-link">Gestiones Realizadas</a>
+                <a href="importarExportar.html" class="sidebar-link">Importar - Exportar</a>
             </div>
             <div class="dropdown-container">
                 <div class="dropdown-link sidebar-link" onclick="toggleDropdown(this)">
@@ -71,11 +69,10 @@
                     <i class="fa-solid fa-chevron-down"></i>
             </div>
             <div class="dropdown-menu">
-                <a href="/reportes/ventas" class="sidebar-link">General</a>
-                <a href="/reportes/usuarios" class="sidebar-link">Negocios Realizados</a>
-                <a href="/reportes/usuarios" class="sidebar-link">Usuarios</a>
-                <a href="/reportes/usuarios" class="sidebar-link">Propietarios</a>
-                <a href="/reportes/usuarios" class="sidebar-link">Correos Enviados</a>
+                <a href="general.html" class="sidebar-link">General</a>
+                <a href="negociosRealizados.html" class="sidebar-link">Negocios Realizados</a>
+                <a href="usuarios.html" class="sidebar-link">Usuarios</a>
+                <a href="propietarios.html" class="sidebar-link">Propietarios</a>
             </div>
         </div>
 
@@ -128,83 +125,179 @@
     </script>
     <!-- FIN DEL SIDEBAR -->
     <!-- Reemplaza el main-content existente -->
-<main class="main-content">
+    <main class="main-content">
+        <form id="clienteForm" class="client-form" onsubmit="handleSubmit(event)">
+            <!-- Sección de información básica -->
+            <div class="form-section">
+                <h2>Datos Personales</h2>
+                
+                <div class="form-columns">
+                    <!-- Columna Izquierda -->
+                    <div class="form-column">
+                        <div class="form-group">
+                            <label>Encargado del cliente</label>
+                            <input type="text" value="Alicia Avila" readonly class="read-only">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="nombre">Nombre</label>
+                            <input type="text" id="nombre" name="nombre" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="fecha_nacimiento">Fecha de nacimiento</label>
+                            <input type="date" id="fecha_nacimiento" name="fecha_nacimiento">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="etiqueta">Etiqueta</label>
+                            <div class="input-with-button">
+                                <select id="etiqueta" name="etiqueta">
+                                    <option value="">Sin etiqueta</option>
+                                </select>
+                                <button type="button" class="add-button">
+                                    <i class="fas fa-plus"></i> Nueva
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="descripcion">Descripción</label>
+                            <textarea id="descripcion" name="descripcion" rows="3"></textarea>
+                        </div>
+                    </div>
     
-    <form id="clienteForm" class="client-form" onsubmit="handleSubmit(event)">
-        <!-- Sección de información básica -->
-        <div class="form-section">
-            <h2>Datos Personales</h2>
-            
-            <div class="form-group">
-                <label for="tipo">Tipo de Cliente:</label>
-                <select id="tipo" name="tipo" required>
-                    <option value="Comprador">Comprador</option>
-                    <option value="Vendedor">Vendedor</option>
-                    <option value="Arrendatario">Arrendatario</option>
-                </select>
+                    <!-- Columna Derecha -->
+                    <div class="form-column">
+                        <div class="form-group">
+                            <label for="tipo">Tipo de cliente</label>
+                            <div class="input-with-button">
+                                <select id="tipo" name="tipo" required>
+                                    <option value="Comprador">Comprador</option>
+                                    <option value="Vendedor">Vendedor</option>
+                                    <option value="Arrendatario">Arrendatario</option>
+                                </select>
+                                <button type="button" class="add-button">
+                                    <i class="fas fa-plus"></i> Agregar
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="correo">Correo electrónico</label>
+                            <input type="email" id="correo" name="correo" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="medio_captacion">Medio de captación</label>
+                            <div class="input-with-button">
+                                <select id="medio_captacion" name="medio_captacion">
+                                    <option value="">Seleccionar</option>
+                                </select>
+                                <button type="button" class="add-button">
+                                    <i class="fas fa-plus"></i> Agregar
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="estado">Estado</label>
+                            <select id="estado" name="estado">
+                                <option value="Nuevo">Nuevo</option>
+                                <option value="En proceso">En proceso</option>
+                                <option value="Cerrado">Cerrado</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="tipo_inmueble">Tipo de Inmueble</label>
+                            <select id="tipo_inmueble" name="tipo_inmueble">
+                                <option value="Casa">Casa</option>
+                                <option value="Apartamento">Apartamento</option>
+                                <option value="Oficina">Oficina</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+    
+                <!-- Sección inferior -->
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="telefono_movil">Teléfono móvil</label>
+                        <div class="phone-input">
+                            <select class="country-code">
+                                <option>+58</option>
+                                <option>+57</option>
+                                <option>+51</option>
+                            </select>
+                            <input type="tel" id="telefono_movil" name="telefono_movil">
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="identificacion">N° de identificación</label>
+                        <input type="text" id="identificacion" name="identificacion">
+                    </div>
+                    
+                    <div class="form-group checkbox-group">
+                        <input type="checkbox" id="recibir_correos" name="recibir_correos">
+                        <label for="recibir_correos">Acepta recibir correos</label>
+                    </div>
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="referido_por">Referido por</label>
+                        <input type="text" id="referido_por" name="referido_por">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="tipo_negocio">Tipo de Negocio</label>
+                        <select id="tipo_negocio" name="tipo_negocio">
+                            <option value="Venta">Venta</option>
+                            <option value="Alquiler">Alquiler</option>
+                            <option value="Ambos">Ambos</option>
+                        </select>
+                    </div>
+                </div>
             </div>
-            
-            <div class="form-group">
-                <label for="nombre">Nombre:</label>
-                <input type="text" id="nombre" name="nombre" required>
-            </div>
-            
-            <div class="form-group">
-                <label for="apellido">Apellido:</label>
-                <input type="text" id="apellido" name="apellido" required>
-            </div>
-            
-            <div class="form-group">
-                <label for="correo">Correo:</label>
-                <input type="email" id="correo" name="correo" required>
-            </div>
-            
-            <div class="form-group">
-                <label for="telefono">Teléfono:</label>
-                <input type="tel" id="telefono" name="telefono" required>
-            </div>
+    
+            <button type="submit" class="btn-submit">Registrar Cliente</button>
+        </form>
+    </main>
+    <footer class="footer">
+        <div class="footer-grid">
+            <section class="footer-section" aria-labelledby="enlaces-utiles">
+                <h3 id="enlaces-utiles">Enlaces Útiles</h3>
+                <nav aria-label="Enlaces legales">
+                    <a href="politicasPrivacidad.html">Políticas de Privacidad</a>
+                    <a href="politicasPrivacidad.html">Términos de Servicio</a>
+                    <a href="politicasPrivacidad.html">Contacto</a>
+                </nav>
+            </section>
+    
+            <section class="footer-section" aria-labelledby="redes-sociales">
+                <h3 id="redes-sociales">Síguenos</h3>
+                <div class="social-links">
+                    <a href="https://www.facebook.com/Avilachgrupoinmobiliario" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                    <a href="https://www.instagram.com/avilach.inmobiliaria/" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.linkedin.com/in/avilach-grupo-inmobiliario-ca-173450350/" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </section>
+    
+            <section class="footer-section" aria-labelledby="newsletter">
+                <h3 id="newsletter">Newsletter</h3>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="Tu correo electrónico" aria-label="Suscribirse al newsletter">
+                    <button type="submit" class="btn-newsletter">Suscribirse</button>
+                </form>
+            </section>
         </div>
-
         
-
-        
-
-        <button type="submit" class="btn-submit">Registrar Cliente</button>
-    </form>
-</main>
-<footer class="footer">
-    <div class="footer-grid">
-        <section class="footer-section" aria-labelledby="enlaces-utiles">
-            <h3 id="enlaces-utiles">Enlaces Útiles</h3>
-            <nav aria-label="Enlaces legales">
-                <a href="#">Políticas de Privacidad</a>
-                <a href="#">Términos de Servicio</a>
-                <a href="#">Contacto</a>
-            </nav>
-        </section>
-
-        <section class="footer-section" aria-labelledby="redes-sociales">
-            <h3 id="redes-sociales">Síguenos</h3>
-            <div class="social-links">
-                <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
-                <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
-            </div>
-        </section>
-
-        <section class="footer-section" aria-labelledby="newsletter">
-            <h3 id="newsletter">Newsletter</h3>
-            <form class="newsletter-form">
-                <input type="email" placeholder="Tu correo electrónico" aria-label="Suscribirse al newsletter">
-                <button type="submit" class="btn-newsletter">Suscribirse</button>
-            </form>
-        </section>
-    </div>
-    
-    <div class="footer-copyright">
-        <p>© 2024 Inmobiliaria. Todos los derechos reservados.</p>
-    </div>
-</footer>
+        <div class="footer-copyright">
+            <p>© 2025 Avilach. Todos los derechos reservados.</p>
+        </div>
+    </footer>
 </body>
 </html>
 <script>

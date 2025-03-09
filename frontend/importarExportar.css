@@ -1,0 +1,157 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Popins, sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #1C1C1C, #2E2E2E);
+}
+
+/* Estilos para los botones */
+.data-actions {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    padding: 0 1rem;
+}
+
+.export-btn {
+    background: linear-gradient(135deg, #EEC346 0%, #D4A82A 100%);
+    color: #1C1C1C !important;
+    border: none;
+    padding: 0.8rem 1.5rem;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    
+}
+
+.import-btn {
+    background: transparent;
+    border: 2px solid #EEC346;
+    color: #EEC346 !important;
+    padding: 0.8rem 1.5rem;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+.export-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(238, 195, 70, 0.3);
+}
+
+.import-btn:hover {
+    background: rgba(238, 195, 70, 0.1);
+    transform: translateY(-2px);
+}
+
+.gold-btn i {
+    margin-right: 0.5rem;
+}
+
+@media (max-width: 480px) {
+    .data-actions {
+        flex-direction: column;
+    }
+    
+    .export-btn,
+    .import-btn {
+        width: 100%;
+        justify-content: center;
+    }
+}
+/* Estilos para el footer */
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+main {
+    flex: 1;
+}
+
+.footer {
+    background: #1A1A1A;
+    padding: 3rem 2rem 1rem;
+    margin-top: auto;
+    border-top: 2px solid rgba(238, 195, 70, 0.1);
+}
+
+.footer-grid {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    padding-bottom: 2rem;
+}
+
+.footer-section h3 {
+    font-family: 'Cinzel', serif;
+    color: #EEC346;
+    margin-bottom: 1.5rem;
+    font-size: 1.2rem;
+}
+
+.footer-contact p {
+    margin: 0.8rem 0;
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    color: #B0B0B0;
+}
+
+.social-links {
+    display: flex;
+    gap: 1.5rem;
+    margin-top: 1rem;
+}
+
+.social-links a {
+    font-size: 1.5rem;
+    transition: transform 0.3s ease;
+}
+
+.social-links a:hover {
+    transform: translateY(-3px);
+}
+
+/* Aumentar tamaño botones */
+.data-actions {
+    margin: 8rem 0;
+    padding: 0 2rem;
+}
+
+.gold-btn {
+    padding: 1.2rem 2.5rem;
+    font-size: 1.1rem;
+    border-radius: 8px;
+    gap: 1rem;
+}
+
+.gold-btn i {
+    font-size: 1.3rem;
+}
+
+.export-btn {
+    box-shadow: 0 4px 15px rgba(238, 195, 70, 0.2);
+}
+
+.import-btn {
+    border-width: 2px;
+}
+
+@media (max-width: 768px) {
+    .gold-btn {
+        width: 100%;
+        justify-content: center;
+        padding: 1rem 1.5rem;
+    }
+    
+    .data-actions {
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+}

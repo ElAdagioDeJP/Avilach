@@ -8,8 +8,8 @@
     <meta name="keywords" content="inmuebles, casas, apartamentos, propiedades, bienes raíces">
     <meta property="og:title" content="Avilach - Propiedades Premium">
     <meta property="og:type" content="website">
-    <title>Avilach Embudo</title>
-    <link rel="stylesheet" href="embudoNegocios.css">
+    <title>Avilach</title>
+    <link rel="stylesheet" href="negociosRealizados.css">
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Poppins&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/your-kit-code.js" crossorigin="anonymous"></script>
     <link rel="shortcut icon" href="img/ico.png" type="image/x-icon">
@@ -18,6 +18,7 @@
     <link rel="stylesheet" href="footer.css">
 </head>
 <body>
+        
     <nav class="top-nav">
         <button class="menu-toggle" onclick="toggleSidebar()">
             <i class="fa-solid fa-bars"></i>
@@ -88,96 +89,53 @@
             Cerrar Sesión
         </a>
     </aside>
+
+        <h1 class="section-title">Negocios realizados</h1>
     
-        <div class="container-fluid">
-            <!-- Encabezado modificado -->
-            <div class="page-header">
-                <div class="header-content">
-                    <h1 class="gold-title"><i class="fas fa-filter"></i> Embudo de negocios</h1>
-                    <div class="header-actions">
-                        <button class="gold-btn">
-                            <i class="fas fa-plus"></i> Nuevo
-                        </button>
-                        <button class="gold-btn">
-                            <i class="fas fa-cog"></i> Configuración
-                        </button>
-                    </div>
-                </div>
-            </div>
-    
-            <!-- Migas de pan estilizadas -->
-            <div class="breadcrumbs">
-                <ul>
-                    <li><a href="https://wasi.co/desktop">Escritorio</a></li>
-                    <li><i class="fas fa-chevron-right"></i></li>
-                    <li><a href="https://wasi.co/usuario/clientes">Clientes</a></li>
-                    <li><i class="fas fa-chevron-right"></i></li>
-                    <li class="active">Embudo de negocios</li>
+        <div class="filter-section">
+            <div class="filter-group">
+                <h3>Encargado</h3>
+                <ul class="filter-list">
+                    <li>Todos</li>
+                    <li>Total tardo<br><span class="amount">US$0</span></li>
+                    <li>Total comisión<br><span class="amount">US$0</span></li>
                 </ul>
             </div>
     
-            <!-- Contenido principal actualizado -->
-            <div class="kanban-container">
-                <!-- Filtros -->
-                <div class="filtro-pipeline">
-                    <div class="filter-group">
-                        <i class="fas fa-search gold-icon"></i>
-                        <input type="text" placeholder="Buscar cliente..." class="gold-input">
-                    </div>
-                    <div class="filter-group">
-                        <i class="fas fa-filter gold-icon"></i>
-                        <select class="gold-select">
-                            <option>Todos los estados</option>
-                            <option>Nuevo</option>
-                            <option>En negociación</option>
-                        </select>
-                    </div>
-                </div>
-    
-                <!-- Area Kanban -->
-                <div class="kanban-grid">
-                    <!-- Columna Nuevo -->
-                    <div class="kanban-column">
-                        <div class="column-header">
-                            <h3>Nuevo <span class="status-badge">17</span></h3>
-                            <i class="fas fa-plus-circle gold-icon"></i>
-                        </div>
-                        <div class="client-card">
-                            <div class="client-header">
-                                <h4>María González</h4>
-                                <span class="client-status new">Nuevo</span>
-                            </div>
-                            <p class="client-info"><i class="fas fa-home gold-icon"></i> Busca apartamento en Bogotá</p>
-                            <div class="client-meta">
-                                <span><i class="fas fa-clock gold-icon"></i> Hace 2h</span>
-                                <button class="card-action"><i class="fas fa-ellipsis-v"></i></button>
-                            </div>
-                        </div>
-                        <!-- Más clientes... -->
-                    </div>
-    
-                    <!-- Columna En negociación -->
-                    <div class="kanban-column">
-                        <div class="column-header">
-                            <h3>En negociación <span class="status-badge">8</span></h3>
-                            <i class="fas fa-handshake gold-icon"></i>
-                        </div>
-                        <div class="client-card">
-                            <div class="client-header">
-                                <h4>Carlos Mendoza</h4>
-                                <span class="client-status negotiation">En proceso</span>
-                            </div>
-                            <p class="client-info"><i class="fas fa-home gold-icon"></i> Casa campestre en Medellín</p>
-                            <div class="client-meta">
-                                <span><i class="fas fa-clock gold-icon"></i> Hace 5d</span>
-                                <button class="card-action"><i class="fas fa-ellipsis-v"></i></button>
-                            </div>
-                        </div>
-                        <!-- Más clientes... -->
-                    </div>
-                </div>
+            <div class="filter-group">
+                <h3>Tipo de negocio</h3>
+                <ul class="filter-list">
+                    <li>Todos</li>
+                    <li>Tipo de inmueble</li>
+                    <li>Todos</li>
+                    <li class="date-range">(del 6 de marzo 2025 - 8 de marzo 2025)</li>
+                </ul>
             </div>
         </div>
+    
+        <h2 class="section-title">Lista de negocios realizados</h2>
+    
+        <table>
+            <thead>
+                <tr>
+                    <th>Inmueble</th>
+                    <th>Negocio</th>
+                    <th>Encargado</th>
+                    <th>Cliente</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td colspan="4" class="no-data">Ningún dato disponible en esta tabla</td>
+                </tr>
+            </tbody>
+        </table>
+    
+        <div class="pagination-info">
+            5 por página<br>
+            <span class="no-data-message">Sin deber que mostrar</span>
+        </div>
+
         <footer class="footer">
             <div class="footer-grid">
                 <section class="footer-section" aria-labelledby="enlaces-utiles">
@@ -211,45 +169,42 @@
                 <p>© 2025 Avilach. Todos los derechos reservados.</p>
             </div>
         </footer>
-    <!-- Scripts -->
-    <script>
-        function toggleDropdown(element) {
-            const container = element.closest('.dropdown-container');
-            const menu = container.querySelector('.dropdown-menu');
-            
-            // Cerrar otros dropdowns
-            document.querySelectorAll('.dropdown-container').forEach(otherContainer => {
-                if(otherContainer !== container) {
-                    otherContainer.classList.remove('active');
-                    otherContainer.querySelector('.dropdown-menu').style.maxHeight = null;
-                }
-            });
-
-            // Toggle actual
-            container.classList.toggle('active');
-            menu.style.maxHeight = menu.style.maxHeight ? null : menu.scrollHeight + "px";
-        }
-
-        // Cerrar dropdowns al hacer click fuera
-        document.addEventListener('click', (e) => {
-            if(!e.target.closest('.dropdown-container')) {
-                document.querySelectorAll('.dropdown-container').forEach(container => {
-                    container.classList.remove('active');
-                    container.querySelector('.dropdown-menu').style.maxHeight = null;
-                });
+<script>
+    function toggleDropdown(element) {
+        const container = element.closest('.dropdown-container');
+        const menu = container.querySelector('.dropdown-menu');
+        
+        // Cerrar otros dropdowns
+        document.querySelectorAll('.dropdown-container').forEach(otherContainer => {
+            if(otherContainer !== container) {
+                otherContainer.classList.remove('active');
+                otherContainer.querySelector('.dropdown-menu').style.maxHeight = null;
             }
         });
-        function toggleSidebar() {
-            const html = document.documentElement;
-            const sidebar = document.querySelector('.sidebar');
-            const backdrop = document.querySelector('.backdrop');
-            
-            sidebar.classList.toggle('active');
-            backdrop.classList.toggle('active');
-            html.classList.toggle('sidebar-open'); // Cambiamos a html en lugar de body
+
+        // Toggle actual
+        container.classList.toggle('active');
+        menu.style.maxHeight = menu.style.maxHeight ? null : menu.scrollHeight + "px";
+    }
+
+    // Cerrar dropdowns al hacer click fuera
+    document.addEventListener('click', (e) => {
+        if(!e.target.closest('.dropdown-container')) {
+            document.querySelectorAll('.dropdown-container').forEach(container => {
+                container.classList.remove('active');
+                container.querySelector('.dropdown-menu').style.maxHeight = null;
+            });
         }
-    </script>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    });
+    function toggleSidebar() {
+        const html = document.documentElement;
+        const sidebar = document.querySelector('.sidebar');
+        const backdrop = document.querySelector('.backdrop');
+        
+        sidebar.classList.toggle('active');
+        backdrop.classList.toggle('active');
+        html.classList.toggle('sidebar-open'); // Cambiamos a html en lugar de body
+    }
+</script>
 </body>
 </html>

@@ -3,13 +3,46 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
+
+}
+body{
+    background: linear-gradient(135deg, #1C1C1C, #2E2E2E);
+}
+.main-content{
+    background: linear-gradient(135deg, #1C1C1C, #2E2E2E);
+}
+.page-header {
+    padding: 2rem 0;
+    border-bottom: 2px solid rgba(238, 195, 70, 0.2);
+    margin-bottom: 1.5rem;
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.gold-title {
+    font-family: 'Cinzel', serif;
+    color: #EEC346;
+    font-size: 2.2rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
 }
 
 /* directorioClientes.css */
 .client-directory {
-    padding: 2rem;
-    background: #ecf0f1;
-    margin:auto; /* Ajustar según ancho sidebar */
+    padding: 0 2rem ;
+    /* background: #ecf0f1; */
+    /* border: 2px solid #bdc3c7; */
+    border-radius: 8px;
+
+    ;
+    /* margin:auto; Ajustar según ancho sidebar */
     min-height: calc(100vh - 120px); /* Ajustar según header/footer */
 }
 
@@ -24,13 +57,19 @@
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 1rem;
     margin-bottom: 2rem;
+    
 }
 
 .summary-card {
-    background: white;
+    color: white;
     padding: 1.5rem;
     border-radius: 8px;
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+     background: rgba(255, 255, 255, 0.05);
+    border-radius: 10px;
+    padding: 1.5rem;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(238, 195, 70, 0.1);
 }
 
 .toolbar {
@@ -67,6 +106,14 @@
     overflow: auto;
     background-color: rgba(0,0,0,0.4);
 }
+.modal-content{
+    background: white;
+    margin: 10% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    display: block;
+}
 
 .search-container .fa-search {
     /* position: absolute; */
@@ -77,7 +124,7 @@
     margin-left: -2.5rem;
 }
 .btn-filter{
-    background: #3498db;
+    background: #EEC346;
     color: white;
     padding: 0.8rem 1.5rem;
     border: none;
@@ -86,7 +133,7 @@
     transition: background 0.3s ease;
 }
 .btn-filter:hover {
-    background: #2980b9;
+    background: #a38732;
 }
 .filter{
     position: relative;
@@ -106,52 +153,55 @@
 .client-table {
     width: 100%;
     border-collapse: collapse;
-    background: white;
+    color: white;
     box-shadow: 0 1px 3px rgba(0,0,0,0.12);
     flex-wrap: wrap;
+    background: rgba(255, 255, 255, 0.05);
+
 }
 
 .client-table th, 
 .client-table td {
     padding: 1rem;
     text-align: left;
-    border-bottom: 1px solid #ecf0f1;
+    border-bottom: 1px solid #2d2d2d;
 }
 
 .client-table th {
-    background: #3498db;
+    background: #ecc551;
     color: white;
     cursor: pointer;
     transition: background 0.3s ease;
 }
 
 .client-table th:hover {
-    background: #2980b9;
+    background: #efc033;
 }
 
 .client-table tr:hover {
-    background: #f5f6fa;
+    /* background: #f5f6fa; */
 }
 
 .btn-new-client {
     /* background: #2ecc71; */
     /* width: 6rem;
     height: 2rem; */
+    background:none;
     display: flex;
-    border: 2px solid #3498db;
-    color: white;
+    border: 2px solid #EEC346;
+    
     padding: 0.8rem 1.5rem;
     border-radius: 5px;
     cursor: pointer;
     transition: background 0.3s ease;
 }
 .btn-new-client a{
-    color: #323232;
+    color: white;
     text-decoration: none;
 }
 .btn-new-client:hover {
-    border: 2px solid #3498db;
-    background: #2980b9;
+    border: 2px solid #EEC346;
+    background: #c9a331;
 }
 .btn-new-client:hover a{
     color: white;
@@ -162,7 +212,7 @@
     justify-content: center;
 }
 .btn-action {
-    background: #2980b9;
+    background: #EEC346;
     color: white;
     padding: 0.5rem 1rem;
     border: none;
@@ -171,7 +221,41 @@
     transition: background 0.3s ease;
 }
 .btn-action:hover {
-    background: #2579a9;
+    background: #ba9d45;
+}
+
+.pagination{
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    margin-top: 1rem;
+}
+.pagination span{
+    background: #EEC346;
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.pagination span:hover{
+    background: #ba9d45;
+}
+
+.pagination button{
+    /* background: #EEC346; */
+    color: white;
+    padding: 0.5rem 1rem;
+    border: 1px solid #EEC346;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.pagination button:hover{
+    background: #EEC346;
+    color: black;
 }
 
 @media (max-width: 768px) {

@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
         // ... más datos
     ];
-
+    
     let currentData = [];
     let currentPage = 1;
     const itemsPerPage = 10;
@@ -45,7 +45,7 @@ document.addEventListener('DOMContentLoaded', () => {
                             <button class="btn-action" id="editClient">
                                 <i class="fa-solid fa-user-pen"></i>
                             </button>
-                            <button class="btn-action" id="deleteClient">
+                            <button class="btn-action deleteClient" id="deleteClient">
                                 <i class="fa-solid fa-trash"></i>
                             </button>
                         </div>
@@ -54,6 +54,7 @@ document.addEventListener('DOMContentLoaded', () => {
             `;
             tbody.innerHTML += row;
         });
+
     }
     
     /*

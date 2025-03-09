@@ -10,7 +10,143 @@ document.addEventListener('DOMContentLoaded', () => {
             estado: "Activo",
             contacto: "maria@email.com | 55-1234-5678",
             propiedades: "Casa Las Lomas #123"
+        },
+        {
+            nombre: "Carlos Mendoza",
+            tipo: "Comprador",
+            ubicacion: "Guadalajara",
+            presupuesto: 1800000,
+            estado: "Activo",
+            contacto: "carlos_m@mail.com | 33-9876-5432",
+            propiedades: "Departamento Centro Histórico #45"
+        },
+        {
+            nombre: "Ana Torres",
+            tipo: "Arrendador",
+            ubicacion: "Monterrey",
+            presupuesto: 850000,
+            estado: "Inactivo",
+            contacto: "anatorres@correo.com | 81-5555-1212",
+            propiedades: "Casa Residencial San Pedro #78"
+        },
+        {
+            nombre: "Luis Hernández",
+            tipo: "Inversionista",
+            ubicacion: "Cancún",
+            presupuesto: 4500000,
+            estado: "Activo",
+            contacto: "luish@inversiones.mx | 998-234-5678",
+            propiedades: "Terreno Playa Delfines #15"
+        },
+        {
+            nombre: "Fernanda Castro",
+            tipo: "Vendedor",
+            ubicacion: "Puebla",
+            presupuesto: 3200000,
+            estado: "Activo",
+            contacto: "fcastro@propiedades.com | 222-765-4321",
+            propiedades: "Local Comercial Angelópolis #22"
+        },
+        {
+            nombre: "Diego Rojas",
+            tipo: "Comprador",
+            ubicacion: "Tijuana",
+            presupuesto: 1500000,
+            estado: "Activo",
+            contacto: "diego.rojas@mail.com | 664-111-2233",
+            propiedades: "Casa Fracc. El Lago #9"
+        },
+        {
+            nombre: "Sofía Ramírez",
+            tipo: "Arrendatario",
+            ubicacion: "Querétaro",
+            presupuesto: 12000,
+            estado: "Activo",
+            contacto: "sofiar@correo.com | 442-444-5566",
+            propiedades: "Departamento Centro #301"
+        },
+        {
+            nombre: "Jorge Navarro",
+            tipo: "Inversionista",
+            ubicacion: "Los Cabos",
+            presupuesto: 6800000,
+            estado: "Inactivo",
+            contacto: "jnavarro@luxury.com | 624-789-0123",
+            propiedades: "Villa Privada Marina #5"
+        },
+        {
+            nombre: "Adriana Mejía",
+            tipo: "Vendedor",
+            ubicacion: "Merida",
+            presupuesto: 1950000,
+            estado: "Activo",
+            contacto: "amejia@casas.com | 999-321-6547",
+            propiedades: "Casa Col. México Norte #33"
+        },
+        {
+            nombre: "Oscar Delgado",
+            tipo: "Comprador",
+            ubicacion: "León",
+            presupuesto: 950000,
+            estado: "Activo",
+            contacto: "odelgado@mail.com | 477-135-7924",
+            propiedades: "Terreno Residencial #12"
+        },
+        {
+            nombre: "Patricia Cordero",
+            tipo: "Arrendador",
+            ubicacion: "Puerto Vallarta",
+            presupuesto: 2800000,
+            estado: "Inactivo",
+            contacto: "pcordero@pv.com | 322-987-6543",
+            propiedades: "Condominio Playa #404"
+        },
+        {
+            nombre: "Ricardo Vargas",
+            tipo: "Inversionista",
+            ubicacion: "CDMX",
+            presupuesto: 8250000,
+            estado: "Activo",
+            contacto: "rvargas@capital.mx | 55-2468-1357",
+            propiedades: "Edificio Corporativo Reforma #1500"
+        },
+        {
+            nombre: "Gabriela Ortiz",
+            tipo: "Vendedor",
+            ubicacion: "Aguascalientes",
+            presupuesto: 1650000,
+            estado: "Activo",
+            contacto: "g.ortiz@prop.com | 449-753-1598",
+            propiedades: "Casa Fracc. Las Flores #78"
+        },
+        {
+            nombre: "Manuel Jiménez",
+            tipo: "Comprador",
+            ubicacion: "Toluca",
+            presupuesto: 750000,
+            estado: "Inactivo",
+            contacto: "manu_j@correo.com | 722-951-3574",
+            propiedades: "Departamento Centro #25B"
+        },
+        {
+            nombre: "Lucía Sánchez",
+            tipo: "Arrendatario",
+            ubicacion: "CDMX",
+            presupuesto: 18000,
+            estado: "Activo",
+            contacto: "lusanz@mail.com | 55-3698-1472",
+            propiedades: "Loft Condesa #PH3"
+        },
+        {
+            nombre: "Enrique Fuentes",
+            tipo: "Inversionista",
+            ubicacion: "Riviera Maya",
+            presupuesto: 12000000,
+            estado: "Activo",
+            contacto: "efuentes@resorts.com | 984-222-3333",
+            propiedades: "Complejo Vacacional Xcaret #1"
         }
+    
         // ... más datos
     ];
     
